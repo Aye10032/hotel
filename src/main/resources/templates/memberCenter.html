@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+  <script type="text/javascript" th:src="@{js/calendar.js}"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"></link>
+  <style type="text/css">
+    
+  	table{
+  	  margin:auto;
+  	  margin-top:0;
+  	  border-collapse:collapse;
+  	  width: 90%;
+  	}
+  	
+  	th,td{
+  	  border:solid 1px #000000;
+  	}
+  	
+  	th{
+  	  padding:6px 1px;
+  	}
+  	
+  	td{
+  	  padding:8px 1px;
+  	}
+  	
+  	td div{
+  	  text-align: center;
+  	}
+  	
+  	.date{
+  	  width: 50px;
+  	  text-align:center;
+  	}
+  	
+  	#content div.button{
+  	  text-align:center;
+  	  padding-top:15px;
+  	}
+  	
+  	#content p{
+  	  margin: 20px 0;
+  	  text-indent: 2em;
+  	  line-height: 1.5em;
+  	  text-align: center;
+  	}
+  </style>
+  <title>会员中心</title>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <ul>
+    <li><a href="#">帮助</a></li>
+  </ul>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="roomPrice.html">设施与价格</a></li>
+      <li><a href="memberCenter.html">会员中心</a></li>
+    </ul>
+  </div>
+  <div id="content" style="width:98%;position:relative">
+    <div class="submenu">
+      <ul>
+        <li><a href="memberCenter.html">客房预订</a></li>
+        <li><a href="historySubscription.html">历史订单</a></li>
+        <li><a href="editMember.html">修改信息</a></li>
+        <li><a href="editPassword.html">修改密码</a></li>
+        <li><a href="index.html">退出系统</a></li>
+      </ul>
+    </div>
+    <div class="subcontent">
+      <p>
+        下面是尚未确认的预定信息，您可以增加、修改或删除订单信息。
+      </p>
+      <table align="center">
+        <colgroup>
+          <col class="datetime" />
+          <col class="no" />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <tr>
+          <th>创建时间</th>
+          <th>订单号</th>
+          <th>联系人</th>
+          <th>联系电话</th>
+          <th>电子邮件</th>
+          <th>&nbsp;</th>
+        </tr>
+        <tr>
+          <td><div>2009-09-08 12:30</div></td>
+          <td><div><a href="#">2009100512</a></div></td>
+          <td><div>刘新福</div></td>
+          <td>13426330776</td>
+          <td>javamedia@live.cn</td>
+          <td>
+            <div>
+              <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
+              <a href="editSubscription.html">联系人信息</a>
+              <a href="subscriptionDetail.html">客房信息</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><div>2009-09-08 12:30</div></td>
+          <td><div><a href="#">2009100518</a></div></td>
+          <td><div>刘德华</div></td>
+          <td>13526330876</td>
+          <td>andylau@live.cn</td>
+          <td>
+            <div>
+              <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
+              <a href="editSubscription.html">联系人信息</a>
+              <a href="subscriptionDetail.html">客房信息</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="button">
+        <input type="button" value="新建订单" onclick="location='newSubscription.html'"/>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div id="footer">
+    <p>本系统做为Java Web教学设计使用。未经允许，不得做为它用，版权所有Allan<br />联系方式：javamedia@live.cn</p>
+  </div>
+</div>
+</body>
+</html>

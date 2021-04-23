@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+  <script type="text/javascript" src="../js/calendar.js"></script>
+  <link rel="stylesheet" type="text/css" href="../style/style.css"></link>
+  <style type="text/css">
+    
+    #content div{
+  	  margin: 10px 0px;
+  	}
+  	
+  	table{
+  	  margin:auto;
+  	  margin-top:20px;
+  	  width:700px;
+  	  border-collapse:collapse;
+  	}
+  	
+  	th,td{
+  	  border:solid 1px #000000;
+  	  padding:6px 1px;
+  	}
+  	
+  	.index{
+  	  width: 50px;
+  	  text-align:center;
+  	}
+  	
+  	.no{
+  	  text-align:center;
+  	}
+  	
+  	.shortname{
+  	  text-align:center;
+  	}
+  	
+  	.phone{
+  	}
+  	
+  	.email{
+  	}
+  	
+  	.status{
+  	}
+  	
+  	.opt{
+  	  text-align:center;
+  	}
+  	
+  	#content div{
+  	  text-align:center;
+  	  margin:0;
+  	  padding:0;
+  	}
+  	
+  	#content div.button{
+  	  text-align:center;
+  	  padding-top:15px;
+  	}
+  	
+  </style>
+  <title>订单列表</title>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <ul>
+      <li><a href="login.html">退出</a></li>
+    </ul>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="#">客房管理</a></li>
+      <li><a href="#">会员管理</a></li>
+      <li><a href="subscriptionQuery.html">订单管理</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <table>
+      <colgroup>
+        <col class="index" />
+        <col class="no" />
+        <col class="shortname" />
+        <col class="phone" />
+        <col class="email" />
+        <col class="status" />
+        <col class="opt" />
+      </colgroup>
+      <tr>
+        <th>序号</th>
+        <th>订单号</th>
+        <th>联系人</th>
+        <th>联系电话</th>
+        <th>电子邮件</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td><div>1</div></td>
+        <td><div><a href="subscriptionDetail.html">2009100512</a></div></td>
+        <td><div>刘新福</div></td>
+        <td>13426330776</td>
+        <td>javamedia@live.cn</td>
+        <td><div>待确认</div></td>
+        <td>
+          <div>
+            <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><div>2</div></td>
+        <td><div><a href="#">2009100518</a></div></td>
+        <td><div>刘德华</div></td>
+        <td>13526330876</td>
+        <td>andylau@live.cn</td>
+        <td><div>已确认</div></td>
+        <td>
+          <div>
+            &nbsp;
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><div>3</div></td>
+        <td><div><a href="#">2009100560</a></div></td>
+        <td><div>成龙</div></td>
+        <td>13826330976</td>
+        <td>dragon@live.cn</td>
+        <td><div>已取消</div></td>
+        <td>
+          <div>
+            <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="button">
+      <input type="button" value="重新查询" onclick="location='subscriptionQuery.html'"/>
+    </div>
+  </div>
+  <hr />
+  <div id="footer">
+    <p>本系统做为Java Web教学设计使用。未经允许，不得做为它用，版权所有Allan<br />联系方式：javamedia@live.cn</p>
+  </div>
+</div>
+</body>
+</html>
