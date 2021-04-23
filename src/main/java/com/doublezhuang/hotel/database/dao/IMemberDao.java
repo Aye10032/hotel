@@ -3,7 +3,10 @@ package com.doublezhuang.hotel.database.dao;
 import com.doublezhuang.hotel.database.pojo.Member;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 /**
  * @program: hotel
@@ -25,7 +28,7 @@ public interface IMemberDao {
             "    name     TEXT,\n" +
             "    email    TEXT,\n" +
             "    phone    TEXT,\n" +
-            "    regtime  TEXT    not null\n" +
+            "    regtime  BLOB    not null\n" +
             ");")
     void CreatMemberTable();
 
@@ -35,4 +38,7 @@ public interface IMemberDao {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     Integer InsertMember(Member member);
 
+
+    @Select("SELECT * FROM member WHERE username=#{username}")
+    List<Member> FindMember(String username);
 }

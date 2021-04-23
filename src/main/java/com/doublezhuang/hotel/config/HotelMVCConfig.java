@@ -2,6 +2,7 @@ package com.doublezhuang.hotel.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -24,5 +25,13 @@ public class HotelMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/register-1.html").setViewName("register-1");
         registry.addViewController("/memberCenter.html").setViewName("memberCenter");
         registry.addViewController("/register-2.html").setViewName("register-2");
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginHandlerInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/", "/index.html", "/register-1.html", "/register", "/register-2.html", "/login.html", "/user_login",
+                        "/images/*", "/js/*", "/style/*");
     }
 }

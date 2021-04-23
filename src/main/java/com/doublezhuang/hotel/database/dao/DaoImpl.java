@@ -1,6 +1,7 @@
 package com.doublezhuang.hotel.database.dao;
 
 import com.doublezhuang.hotel.database.pojo.Member;
+import jdk.nashorn.internal.objects.NativeUint8Array;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -65,5 +67,17 @@ public class DaoImpl implements IMemberDao{
         session.commit();
         closeAll();
         return member.getId();
+    }
+
+    @Override
+    public List<Member> FindMember(String username) {
+        List<Member> members = null;
+        initSession();
+
+        IMemberDao dao = session.getMapper(IMemberDao.class);
+        members = dao.FindMember(username);
+
+        closeAll();
+        return members;
     }
 }
