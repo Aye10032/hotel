@@ -1,5 +1,8 @@
 package com.doublezhuang.hotel.database.dao;
 
+import com.doublezhuang.hotel.database.pojo.Member;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Update;
 
 /**
@@ -24,6 +27,12 @@ public interface IMemberDao {
             "    phone    TEXT,\n" +
             "    regtime  TEXT    not null\n" +
             ");")
-    public void CreatMemberTable();
+    void CreatMemberTable();
+
+    @Insert("INSERT INTO 'member'" +
+            "('username','pwd','name','email','phone','regtime') VALUES " +
+            "(#{username}, #{pwd}, #{name}, #{email}, #{phone}, #{regtime});")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    Integer InsertMember(Member member);
 
 }

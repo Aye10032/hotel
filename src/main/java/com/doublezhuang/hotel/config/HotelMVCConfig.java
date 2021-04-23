@@ -23,5 +23,6 @@ public class HotelMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/login.html").setViewName("login");
         registry.addViewController("/register-1.html").setViewName("register-1");
         registry.addViewController("/memberCenter.html").setViewName("memberCenter");
+        registry.addViewController("/register-2.html").setViewName("register-2");
     }
 }
