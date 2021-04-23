@@ -16,12 +16,13 @@ public class DataInit {
 
     public static void init(){
         File file = new File("hotel.db");
+        MemberDaoImpl dao = new MemberDaoImpl();
         if (!file.exists()){
-            MemberDaoImpl dao = new MemberDaoImpl();
-
             dao.CreatMemberTable();
         }else {
-            //TODO
+            if (dao.TableExist() == 0){
+                dao.CreatMemberTable();
+            }
         }
     }
 

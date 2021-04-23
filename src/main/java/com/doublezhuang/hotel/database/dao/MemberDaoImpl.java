@@ -19,7 +19,7 @@ import java.util.List;
  * @author: Aye10032
  * @date: 2021/4/23 上午 11:38
  */
-public class DaoImpl implements IMemberDao{
+public class MemberDaoImpl implements IMemberDao{
 
     private InputStream in;
     private SqlSession session;
@@ -45,6 +45,18 @@ public class DaoImpl implements IMemberDao{
         }
     }
 
+
+    @Override
+    public Integer TableExist() {
+        Integer result = null;
+        initSession();
+
+        IMemberDao dao = session.getMapper(IMemberDao.class);
+        result = dao.TableExist();
+
+        closeAll();
+        return result;
+    }
 
     @Override
     public void CreatMemberTable() {
