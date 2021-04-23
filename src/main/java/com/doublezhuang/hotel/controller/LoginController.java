@@ -20,7 +20,7 @@ public class LoginController {
     @RequestMapping("/user_login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         if (StringUtils.hasLength(username)){
-            return "memberCenter";
+            return "redirect:/memberCenter.html";
         }else {
             model.addAttribute("msg", "用户名不能为空！");
             return "login";

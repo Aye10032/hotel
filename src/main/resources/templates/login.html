@@ -53,7 +53,7 @@
     </ul>
   </div>
   <div id="content">
-  <form action="memberCenter.html">
+  <form th:action="@{user_login}">
     <fieldset>
       <legend>µÇÂ¼ÐÅÏ¢</legend>
       <div>
@@ -64,6 +64,7 @@
         <label for="password">ÃÜÂë</label>
         <input type="text" name="password" id="password" />
       </div>
+      <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     </fieldset>
     <div class="submit">
       <input type="submit" value="µÇÂ¼" />
