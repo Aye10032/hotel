@@ -21,7 +21,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 
         if (LoginUser == null) {
             request.setAttribute("msg", "没有权限，请登录");
-            request.getRequestDispatcher("/user_login").forward(request, response);
+            request.getRequestDispatcher("/login.html").forward(request, response);
             return false;
         }else {
             return true;
