@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
   <style type="text/css">
     
@@ -36,45 +36,45 @@
   	}  
   	
   </style>
-  <title>��¼</title>
+  <title>登录</title>
 </head>
 <body>
 <div id="container">
   <div id="header">
     <ul>
-      <li><a href="#">����</a></li>
+      <li><a href="#">帮助</a></li>
     </ul>
   </div>
   <div id="menu">
     <ul>
-      <li><a th:href="@{index.html}">��ҳ</a></li>
-      <li><a th:href="@{roomPrice.html}">��ʩ��۸�</a></li>
-      <li><a th:href="@{memberCenter.html}">��Ա����</a></li>
+      <li><a th:href="@{index.html}">首页</a></li>
+      <li><a th:href="@{roomPrice.html}">设施与价格</a></li>
+      <li><a th:href="@{memberCenter.html}">会员中心</a></li>
     </ul>
   </div>
   <div id="content">
   <form th:action="@{user_login}">
     <fieldset>
-      <legend>��¼��Ϣ</legend>
+      <legend>登录信息</legend>
       <div>
-        <label for="username">�û���</label>
+        <label for="username">用户名</label>
         <input type="text" name="username" id="username" />
       </div>
       <div>
-        <label for="password">����</label>
+        <label for="password">密码</label>
         <input type="text" name="password" id="password" />
       </div>
       <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     </fieldset>
     <div class="submit">
-      <input type="submit" value="��¼" />
-      <p>�������ûע�ᣬ��<a th:href="@{register-1.html}">�������ע��</a>��Ϊ��Ա��</p>
+      <input type="submit" value="登录" />
+      <p>如果您还没注册，请<a th:href="@{register-1.html}">点击这里注册</a>成为会员。</p>
     </div>
   </form>
   </div>
   <hr />
   <div id="footer">
-    <p>��ϵͳ��ΪJava Web��ѧ���ʹ�á�δ��������������Ϊ���ã���Ȩ����Allan<br />��ϵ��ʽ��javamedia@live.cn</p>
+    <p>本系统做为Java Web教学设计使用。未经允许，不得做为它用，版权所有Allan<br />联系方式：javamedia@live.cn</p>
   </div>
 </div>
 </body>

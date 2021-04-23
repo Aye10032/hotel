@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-  <script type="text/javascript" src="js/calendar.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" th:src="@{js/calendar.js}"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"></link>
   <style type="text/css">
   	#content p{
   	  text-align: center;
@@ -23,13 +23,13 @@
   </div>
   <div id="menu">
     <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="roomPrice.html">设施与价格</a></li>
-      <li><a href="memberCenter.html">会员中心</a></li>
+      <li><a th:href="@{index.html}">首页</a></li>
+      <li><a th:href="@{roomPrice.html}">设施与价格</a></li>
+      <li><a th:href="@{memberCenter.html}">会员中心</a></li>
     </ul>
   </div>
   <div id="content">
-    <p>恭喜你，注册成功，请<a href="login.html">登录</a>。</p>
+    <p>恭喜你，注册成功，请<a th:href="@{login.html}">登录</a>。</p>
   </div>
   <hr />
   <div id="footer">
