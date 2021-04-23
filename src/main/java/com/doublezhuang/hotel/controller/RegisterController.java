@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -61,6 +62,12 @@ public class RegisterController {
         member.setRegtime(date);
 
         DaoImpl dao = new DaoImpl();
+        List<Member> members = dao.FindMember(username);
+        if (!members.isEmpty()){
+            model.addAttribute("msg", "用户名已存在！");
+            return "register-1";
+        }
+
         Integer id = dao.InsertMember(member);
         return "redirect:/register-2.html";
     }
