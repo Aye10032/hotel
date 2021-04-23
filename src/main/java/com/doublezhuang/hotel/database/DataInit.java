@@ -1,6 +1,6 @@
 package com.doublezhuang.hotel.database;
 
-import com.doublezhuang.hotel.database.dao.DaoImpl;
+import com.doublezhuang.hotel.database.dao.MemberDaoImpl;
 
 import java.io.File;
 
@@ -17,7 +17,7 @@ public class DataInit {
     public static void init(){
         File file = new File("hotel.db");
         if (!file.exists()){
-            DaoImpl dao = new DaoImpl();
+            MemberDaoImpl dao = new MemberDaoImpl();
 
             dao.CreatMemberTable();
         }else {

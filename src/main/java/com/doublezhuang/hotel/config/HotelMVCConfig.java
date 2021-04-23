@@ -33,7 +33,8 @@ public class HotelMVCConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/", "/index.html", "/register-1.html", "/register", "/register-2.html", "/login.html", "/user_login",
+                .excludePathPatterns("/", "/index.html", "/register-1.html", "/register", "/register-2.html",
+                        "/login.html", "/user_login", "/roomPrice.html",
                         "/images/*", "/js/*", "/style/*");
     }
 }

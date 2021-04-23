@@ -1,6 +1,6 @@
 package com.doublezhuang.hotel.controller;
 
-import com.doublezhuang.hotel.database.dao.DaoImpl;
+import com.doublezhuang.hotel.database.dao.MemberDaoImpl;
 import com.doublezhuang.hotel.database.pojo.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,7 +61,7 @@ public class RegisterController {
         member.setPhone(phone);
         member.setRegtime(date);
 
-        DaoImpl dao = new DaoImpl();
+        MemberDaoImpl dao = new MemberDaoImpl();
         List<Member> members = dao.FindMember(username);
         if (!members.isEmpty()){
             model.addAttribute("msg", "用户名已存在！");

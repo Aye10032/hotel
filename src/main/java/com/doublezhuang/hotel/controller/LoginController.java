@@ -1,6 +1,6 @@
 package com.doublezhuang.hotel.controller;
 
-import com.doublezhuang.hotel.database.dao.DaoImpl;
+import com.doublezhuang.hotel.database.dao.MemberDaoImpl;
 import com.doublezhuang.hotel.database.pojo.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +31,7 @@ public class LoginController {
             model.addAttribute("msg", "用户名不能为空！");
             return "login";
         }
-        DaoImpl dao = new DaoImpl();
+        MemberDaoImpl dao = new MemberDaoImpl();
         List<Member> finders = dao.FindMember(username);
         if (finders.isEmpty()){
             model.addAttribute("msg", "用户不存在！");
