@@ -1,5 +1,6 @@
 package com.doublezhuang.hotel.database.dao;
 
+import com.doublezhuang.hotel.database.pojo.Member;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -45,6 +46,24 @@ public class DaoImpl implements IMemberDao{
 
     @Override
     public void CreatMemberTable() {
+        initSession();
 
+        IMemberDao dao = session.getMapper(IMemberDao.class);
+        dao.CreatMemberTable();
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public Integer InsertMember(Member member) {
+        initSession();
+
+        IMemberDao dao = session.getMapper(IMemberDao.class);
+        dao.InsertMember(member);
+
+        session.commit();
+        closeAll();
+        return member.getId();
     }
 }
