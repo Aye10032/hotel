@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.4.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'war'
     id 'java'
 }
 
@@ -14,7 +15,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5
@@ -26,6 +27,14 @@ dependencies {
     compile group: 'org.mybatis', name: 'mybatis', version: '3.5.6'
     // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
+}
+
+war {
+    enabled = true  // 开启 war 任务
+}
+
+bootWar {
+    classifier = 'boot'  //  修改 bootWar 的文件名称 , 这一步是为了区分可执行 war 与 正常 war
 }
 
 test {
