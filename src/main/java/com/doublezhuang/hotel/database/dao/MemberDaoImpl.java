@@ -19,7 +19,7 @@ import java.util.List;
  * @author: Aye10032
  * @date: 2021/4/23 上午 11:38
  */
-public class MemberDaoImpl implements IMemberDao{
+public class MemberDaoImpl implements IMemberDao {
 
     private InputStream in;
     private SqlSession session;
@@ -94,7 +94,13 @@ public class MemberDaoImpl implements IMemberDao{
     }
 
     @Override
-    public void UpdateMember() {
+    public void UpdateMember(Member member) {
+        initSession();
 
+        IMemberDao dao = session.getMapper(IMemberDao.class);
+        dao.UpdateMember(member);
+
+        session.commit();
+        closeAll();
     }
 }

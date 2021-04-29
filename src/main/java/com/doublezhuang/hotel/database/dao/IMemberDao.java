@@ -45,5 +45,5 @@ public interface IMemberDao {
     @Select("SELECT * FROM member WHERE username=#{username}")
     List<Member> FindMember(String username);
 
-    void UpdateMember();
+    void UpdateMember(Member member);
 }
