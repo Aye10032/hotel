@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"></link>
+  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
   <style type="text/css">
     
   	form{
@@ -62,7 +62,7 @@
       <ul>
         <li><a th:href="@{memberCenter.html}">客房预订</a></li>
         <li><a th:href="@{historySubscription.html}">历史订单</a></li>
-        <li><a th:href="@{editMember.html}">修改信息</a></li>
+        <li><a th:href="@{/editMember}">修改信息</a></li>
         <li><a th:href="@{editPassword.html}">修改密码</a></li>
         <li><a th:href="@{index.html}">退出系统</a></li>
       </ul>
@@ -73,15 +73,15 @@
           <legend>联系信息</legend>
           <div>
             <label for="name">联系人</label>
-            <input type="text" name="name" id="name" value="刘新福"/>
+            <input type="text" name="name" id="name" th:value="${name}"/>
           </div>
           <div>
             <label for="phone">联系电话</label>
-            <input type="text" name="phone" id="phone" value="13426330776"/>
+            <input type="text" name="phone" id="phone" th:value="${phone}"/>
           </div>
           <div>
             <label for="email">电子邮件</label>
-            <input type="text" name="email" id="email" value="javamedia@live.cn"/>
+            <input type="text" name="email" id="email" th:value="${email}"/>
           </div>
         </fieldset>
         <fieldset class="buttons">

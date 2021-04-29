@@ -92,4 +92,9 @@ public class MemberDaoImpl implements IMemberDao{
         closeAll();
         return members;
     }
+
+    @Override
+    public void UpdateMember() {
+
+    }
 }
