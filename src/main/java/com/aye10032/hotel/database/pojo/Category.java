@@ -1,4 +1,4 @@
-package com.doublezhuang.hotel.database.pojo;
+package com.aye10032.hotel.database.pojo;
 
 import java.util.Objects;
 

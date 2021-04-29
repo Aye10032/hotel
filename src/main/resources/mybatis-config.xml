@@ -17,6 +17,6 @@
     </environments>
 
     <mappers>
-        <mapper class="com.doublezhuang.hotel.database.dao.IMemberDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.IMemberDao"/>
     </mappers>
 </configuration>

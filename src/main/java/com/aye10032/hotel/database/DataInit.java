@@ -1,6 +1,6 @@
-package com.doublezhuang.hotel.database;
+package com.aye10032.hotel.database;
 
-import com.doublezhuang.hotel.database.dao.MemberDaoImpl;
+import com.aye10032.hotel.database.dao.MemberDaoImpl;
 
 import java.io.File;
 

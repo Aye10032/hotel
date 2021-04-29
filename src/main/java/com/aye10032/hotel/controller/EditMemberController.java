@@ -1,13 +1,11 @@
-package com.doublezhuang.hotel.controller;
+package com.aye10032.hotel.controller;
 
-import com.doublezhuang.hotel.database.dao.MemberDaoImpl;
-import com.doublezhuang.hotel.database.pojo.Member;
+import com.aye10032.hotel.database.dao.MemberDaoImpl;
+import com.aye10032.hotel.database.pojo.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**

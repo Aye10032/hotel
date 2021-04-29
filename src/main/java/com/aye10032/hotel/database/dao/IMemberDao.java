@@ -1,6 +1,6 @@
-package com.doublezhuang.hotel.database.dao;
+package com.aye10032.hotel.database.dao;
 
-import com.doublezhuang.hotel.database.pojo.Member;
+import com.aye10032.hotel.database.pojo.Member;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;

@@ -1,4 +1,4 @@
-package com.doublezhuang.hotel.config;
+package com.aye10032.hotel.config;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 

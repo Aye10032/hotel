@@ -1,4 +1,4 @@
-package com.doublezhuang.hotel;
+package com.aye10032.hotel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
-package com.doublezhuang.hotel;
+package com.aye10032.hotel;
 
-import com.doublezhuang.hotel.database.DataInit;
+import com.aye10032.hotel.database.DataInit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

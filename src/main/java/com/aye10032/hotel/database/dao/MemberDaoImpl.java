@@ -1,7 +1,6 @@
-package com.doublezhuang.hotel.database.dao;
+package com.aye10032.hotel.database.dao;
 
-import com.doublezhuang.hotel.database.pojo.Member;
-import jdk.nashorn.internal.objects.NativeUint8Array;
+import com.aye10032.hotel.database.pojo.Member;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
