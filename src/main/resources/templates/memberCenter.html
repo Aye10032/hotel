@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script type="text/javascript" th:src="@{js/calendar.js}"></script>
-  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"></link>
+  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
   <style type="text/css">
     
   	table{
@@ -104,7 +104,7 @@
             <div>
               <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
               <a href="editSubscription.html">联系人信息</a>
-              <a href="subscriptionDetail.html">客房信息</a>
+              <a th:href="@{subscriptionDetail.html}">客房信息</a>
             </div>
           </td>
         </tr>
