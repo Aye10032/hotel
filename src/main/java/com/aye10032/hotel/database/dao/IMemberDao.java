@@ -45,6 +45,9 @@ public interface IMemberDao {
     @Select("SELECT * FROM member WHERE username=#{username}")
     List<Member> FindMember(String username);
 
-    @Update("UPDATE member SET username=#{username},pwd=#{pwd},name=#{name},email=#{email},phone=#{phone} where id=#{id};")
+    @Update("UPDATE member SET " +
+            "username=#{username},pwd=#{pwd},name=#{name},email=#{email},phone=#{phone} where id=#{id};")
     void UpdateMember(Member member);
+
+
 }
