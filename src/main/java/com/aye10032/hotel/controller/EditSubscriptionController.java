@@ -20,17 +20,15 @@ import javax.servlet.http.HttpSession;
 public class EditSubscriptionController {
 
     @RequestMapping("/editSubscription")
-    public String editSubscription(){
-        return "editSubscription";
-    }
-
-    public String editMember(Model model, HttpSession session){
+    public String editSubscription(Model model, HttpSession session){
+        System.out.println("hiiii");
         MemberDaoImpl dao = new MemberDaoImpl();
         Member member = dao.FindMember(session.getAttribute("LoginUser").toString()).get(0);
         System.out.println("hi " + member.getUsername());
         model.addAttribute("name", member.getName());
         model.addAttribute("phone", member.getPhone());
         model.addAttribute("email", member.getEmail());
-        return "editMember";
+        return "editSubscription";
     }
+
 }

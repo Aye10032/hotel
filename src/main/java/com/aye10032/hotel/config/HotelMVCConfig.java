@@ -29,6 +29,7 @@ public class HotelMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/subscriptionDetail.html").setViewName("subscriptionDetail");
         registry.addViewController("/historySubscription.html").setViewName("historySubscription");
         registry.addViewController("/editMember.html").setViewName("editMember");
+        registry.addViewController("/editSubscription.html").setViewName("editSubscription");
     }
 
     @Override
