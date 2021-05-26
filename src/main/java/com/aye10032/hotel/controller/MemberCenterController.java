@@ -20,6 +20,7 @@ public class MemberCenterController {
 
     @RequestMapping("/memberCenter")
     public String memberCenter(){
+        System.out.println("center");
         return "memberCenter";
     }
 }

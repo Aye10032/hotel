@@ -74,6 +74,7 @@ public class RegisterController {
 
     @RequestMapping("/register-2")
     public String register_success(){
+        System.out.println("reg-2");
         return "register-2";
     }
 

@@ -25,11 +25,12 @@ public class HotelMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/register-2.html").setViewName("register-2");
         registry.addViewController("/roomPrice.html").setViewName("roomPrice");
 
-        registry.addViewController("/memberCenter.html").setViewName("memberCenter");
+        registry.addViewController("/memberCenter.html").setViewName("/memberCenter");
         registry.addViewController("/subscriptionDetail.html").setViewName("subscriptionDetail");
         registry.addViewController("/historySubscription.html").setViewName("historySubscription");
         registry.addViewController("/editMember.html").setViewName("editMember");
         registry.addViewController("/editSubscription.html").setViewName("editSubscription");
+        registry.addViewController("/editPassword.html").setViewName("editPassword");
     }
 
     @Override
