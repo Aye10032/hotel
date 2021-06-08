@@ -14,16 +14,16 @@ public class Room {
 
     public Integer id;
     public Integer cid;
-    public String no;
+    public String rno;
     public String status;
 
     public Room() {
     }
 
-    public Room(Integer id, Integer cid, String no, String status) {
+    public Room(Integer id, Integer cid, String rno, String status) {
         this.id = id;
         this.cid = cid;
-        this.no = no;
+        this.rno = rno;
         this.status = status;
     }
 
@@ -43,12 +43,12 @@ public class Room {
         this.cid = cid;
     }
 
-    public String getNo() {
-        return no;
+    public String getRno() {
+        return rno;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setRno(String rno) {
+        this.rno = rno;
     }
 
     public String getStatus() {
@@ -64,12 +64,12 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return Objects.equals(id, room.id) && Objects.equals(cid, room.cid) && Objects.equals(no, room.no) && Objects.equals(status, room.status);
+        return Objects.equals(id, room.id) && Objects.equals(cid, room.cid) && Objects.equals(rno, room.rno) && Objects.equals(status, room.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cid, no, status);
+        return Objects.hash(id, cid, rno, status);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class Room {
         return "Room{" +
                 "id=" + id +
                 ", cid=" + cid +
-                ", no='" + no + '\'' +
+                ", no='" + rno + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }

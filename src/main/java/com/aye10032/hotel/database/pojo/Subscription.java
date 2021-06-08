@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Subscription {
     public Integer id;
     public Integer mid;
-    public String no;
+    public String sno;
     public String linkman;
     public String email;
     public String phone;
@@ -25,10 +25,10 @@ public class Subscription {
     public Subscription() {
     }
 
-    public Subscription(Integer id, Integer mid, String no, String linkman, String email, String phone, String status, Date cretime, String remark) {
+    public Subscription(Integer id, Integer mid, String sno, String linkman, String email, String phone, String status, Date cretime, String remark) {
         this.id = id;
         this.mid = mid;
-        this.no = no;
+        this.sno = sno;
         this.linkman = linkman;
         this.email = email;
         this.phone = phone;
@@ -53,12 +53,12 @@ public class Subscription {
         this.mid = mid;
     }
 
-    public String getNo() {
-        return no;
+    public String getSno() {
+        return sno;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setSno(String sno) {
+        this.sno = sno;
     }
 
     public String getLinkman() {
@@ -114,12 +114,12 @@ public class Subscription {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Subscription that = (Subscription) o;
-        return Objects.equals(id, that.id) && Objects.equals(mid, that.mid) && Objects.equals(no, that.no) && Objects.equals(linkman, that.linkman) && Objects.equals(email, that.email) && Objects.equals(phone, that.phone) && Objects.equals(status, that.status) && Objects.equals(cretime, that.cretime) && Objects.equals(remark, that.remark);
+        return Objects.equals(id, that.id) && Objects.equals(mid, that.mid) && Objects.equals(sno, that.sno) && Objects.equals(linkman, that.linkman) && Objects.equals(email, that.email) && Objects.equals(phone, that.phone) && Objects.equals(status, that.status) && Objects.equals(cretime, that.cretime) && Objects.equals(remark, that.remark);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, mid, no, linkman, email, phone, status, cretime, remark);
+        return Objects.hash(id, mid, sno, linkman, email, phone, status, cretime, remark);
     }
 
     @Override
@@ -127,7 +127,7 @@ public class Subscription {
         return "Subscription{" +
                 "id=" + id +
                 ", mid=" + mid +
-                ", no='" + no + '\'' +
+                ", no='" + sno + '\'' +
                 ", linkman='" + linkman + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
