@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script type="text/javascript" src="../js/calendar.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+  <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
   <style type="text/css">
     form{
       margin: 15px 0;
@@ -52,28 +52,28 @@
   </div>
   <div id="menu">
     <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="roomPrice.html">设施与价格</a></li>
-      <li><a href="memberCenter.html">会员中心</a></li>
+      <li><a th:href="@{index.html}">首页</a></li>
+      <li><a th:href="@{roomPrice.html}">设施与价格</a></li>
+      <li><a th:href="@{memberCenter.html}">会员中心</a></li>
     </ul>
   </div>
   <div id="content">
     <div class="submenu">
       <ul>
-        <li><a href="memberCenter.html">客房预订</a></li>
-        <li><a href="historySubscription.html">历史订单</a></li>
-        <li><a href="editMember.html">修改信息</a></li>
-        <li><a href="editPassword.html">修改密码</a></li>
-        <li><a href="index.html">退出系统</a></li>
+        <li><a th:href="@{memberCenter.html}">客房预订</a></li>
+        <li><a th:href="@{historySubscription.html}">历史订单</a></li>
+        <li><a th:href="@{editMember.html}">修改信息</a></li>
+        <li><a th:href="@{editPassword.html}">修改密码</a></li>
+        <li><a th:href="@{index.html}">退出系统</a></li>
       </ul>
     </div>
     <div class="subcontent">
-      <form action="memberCenter.html">
+      <form th:action="@{memberCenter.html}">
         <fieldset>
           <legend>联系人信息</legend>
           <div>
             <label for="name">联系人</label>
-            <input type="text" name="name" id="name"/>
+            <input type="text" name="name" id="name" th:value="${name}"/>
           </div>
           <div>
             <label for="phone">联系电话</label>
