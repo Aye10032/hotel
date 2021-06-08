@@ -1,5 +1,8 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Category;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,4 +32,21 @@ public interface ICategoryDao {
             ");")
     void creatCategoryTable();
 
+    @Insert("INSERT INTO 'category'" +
+            "('name','code','description','bedprice','roomprice') VALUES " +
+            "(#{name}, #{code}, #{description}, #{bedprice}, #{roomprice});")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    void insertCategoryTable(Category category);
+
+    @Update("DELETE FROM 'category'"+
+            "WHERE ID=#{id}")
+    void dropCategoryTable(Integer id);
+
+    @Update("UPDATE 'category' SET " +
+            "name=#{name},code=#{code},description=#{description},bedprice=#{bedprice},roomprice=#{roomprice} " +
+            "where id=#{id};")
+    void updateCategoryTable(Category category);
+
+    @Select("SELECT * FROM 'category' WHERE id=#{id}")
+    void selectCategoryTable(Integer id);
 }
