@@ -46,12 +46,12 @@ public class MemberDaoImpl implements IMemberDao {
 
 
     @Override
-    public Integer TableExist() {
+    public Integer MemberTableExist() {
         Integer result = null;
         initSession();
 
         IMemberDao dao = session.getMapper(IMemberDao.class);
-        result = dao.TableExist();
+        result = dao.MemberTableExist();
 
         closeAll();
         return result;

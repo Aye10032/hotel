@@ -20,7 +20,7 @@ public class DataInit {
         if (!file.exists()){
             dao.CreatMemberTable();
         }else {
-            if (dao.TableExist() == 0){
+            if (dao.MemberTableExist() == 0){
                 dao.CreatMemberTable();
             }
         }
