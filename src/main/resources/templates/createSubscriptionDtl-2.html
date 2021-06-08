@@ -1,126 +1,128 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <script type="text/javascript" src="js/calendar.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/style.css"></link>
-  <style type="text/css">
-    div.submit{
-  	  text-align:center;
-  	  margin-top: 15px;
-  	  border: solid 1px #ffffff;
-  	}
-  	
-  	table{
-  	  margin:auto;
-  	  margin-top:3px;
-  	  width:600px;
-  	  border-collapse:collapse;
-  	}
-  	
-  	td{
-  	  border:solid 1px #ffffff;
-  	  padding:6px 1px;
-  	  text-align:center;
-  	}
-  	
-  	fieldset{
-  	  border: 0;
-  	}
-  	
-  	#content p{
-  	  text-align: center;
-  	  margin-top: 20px;
-  	}	  
-	  
-  </style>
-  <title>预定客房</title>
-</head>
-<body>
-<div id="container">
-  <div id="header">
-    <ul>
-      <li><a href="#">帮助</a></li>
-    </ul>
-  </div>
-  <div id="menu">
-    <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="roomPrice.html">设施与价格</a></li>
-      <li><a href="memberCenter.html">会员中心</a></li>
-    </ul>
-  </div>
-  <div id="content">
-    <div class="submenu">
-      <ul>
-        <li><a href="memberCenter.html">客房预订</a></li>
-        <li><a href="historySubscription.html">历史订单</a></li>
-        <li><a href="editMember.html">修改信息</a></li>
-        <li><a href="editPassword.html">修改密码</a></li>
-        <li><a href="index.html">退出系统</a></li>
-      </ul>
-    </div>
-    <div class="subcontent">
-      <p>下面是满足您预订条件的房间，请选择一个或多个然后点击完成按钮，点击上一步可以更改预定条件。</p>
-      <form action="createSubscriptionDtl-3.html">
-        <fieldset>
-          <table>
-            <tr>
-              <td>
-                <label for="room_101">101</label>
-                <input type="checkbox" name="room_101" value="" id="room_101" />
-              </td>
-              <td>
-                <label for="room_102">102</label>
-                <input type="checkbox" name="room_102" value="" id="room_102" />
-              </td>
-              <td>
-                <label for="room_103">103</label>
-                <input type="checkbox" name="room_103" value="" id="room_103" />
-              </td>
-              <td>
-                <label for="room_104">104</label>
-                <input type="checkbox" name="room_104" value="" id="room_104" />
-              </td>
-              <td>
-                <label for="room_105">105</label>
-                <input type="checkbox" name="room_105" value="" id="room_105" />
-              </td>
-              <td>
-                <label for="room_106">106</label>
-                <input type="checkbox" name="room_106" value="" id="room_106" />
-              </td>
-            </tr>
-            
-             <tr>
-              <td>
-                <label for="room_201">201</label>
-                <input type="checkbox" name="room_201" value="" id="room_201" />
-              </td>
-              <td>
-                <label for="room_202">202</label>
-                <input type="checkbox" name="room_202" value="" id="room_202" />
-              </td>
-              <td>
-                <label for="room_103">203</label>
-                <input type="checkbox" name="room_203" value="" id="room_203" />
-              </td>
-            </tr>
-          </table>
-        </fieldset>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="js/calendar.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+    <style type="text/css">
+        div.submit {
+            text-align: center;
+            margin-top: 15px;
+            border: solid 1px #ffffff;
+        }
         
-        <div class="submit">
-          <input type="button" value="上一步" onclick="location='createSubscriptionDtl-1.html'"/>
-          <input type="submit" value="完成" />
+        table {
+            margin: auto;
+            margin-top: 3px;
+            width: 600px;
+            border-collapse: collapse;
+        }
+        
+        td {
+            border: solid 1px #ffffff;
+            padding: 6px 1px;
+            text-align: center;
+        }
+        
+        fieldset {
+            border: 0;
+        }
+        
+        #content p {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <title>预定客房</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <ul>
+                <li><a href="#">帮助</a></li>
+            </ul>
         </div>
-      </form>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="roomPrice.html">设施与价格</a></li>
+                <li><a href="memberCenter.html">会员中心</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="submenu">
+                <ul>
+                    <li><a href="memberCenter.html">客房预订</a></li>
+                    <li><a href="historySubscription.html">历史订单</a></li>
+                    <li><a href="editMember.html">修改信息</a></li>
+                    <li><a href="editPassword.html">修改密码</a></li>
+                    <li><a th:href="@{/exit_page}">退出系统</a></li>
+                </ul>
+            </div>
+            <div class="subcontent">
+                <p>下面是满足您预订条件的房间，请选择一个或多个然后点击完成按钮，点击上一步可以更改预定条件。</p>
+                <form action="createSubscriptionDtl-3.html">
+                    <fieldset>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="room_101">101</label>
+                                    <input type="checkbox" name="room_101" value="" id="room_101" />
+                                </td>
+                                <td>
+                                    <label for="room_102">102</label>
+                                    <input type="checkbox" name="room_102" value="" id="room_102" />
+                                </td>
+                                <td>
+                                    <label for="room_103">103</label>
+                                    <input type="checkbox" name="room_103" value="" id="room_103" />
+                                </td>
+                                <td>
+                                    <label for="room_104">104</label>
+                                    <input type="checkbox" name="room_104" value="" id="room_104" />
+                                </td>
+                                <td>
+                                    <label for="room_105">105</label>
+                                    <input type="checkbox" name="room_105" value="" id="room_105" />
+                                </td>
+                                <td>
+                                    <label for="room_106">106</label>
+                                    <input type="checkbox" name="room_106" value="" id="room_106" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="room_201">201</label>
+                                    <input type="checkbox" name="room_201" value="" id="room_201" />
+                                </td>
+                                <td>
+                                    <label for="room_202">202</label>
+                                    <input type="checkbox" name="room_202" value="" id="room_202" />
+                                </td>
+                                <td>
+                                    <label for="room_103">203</label>
+                                    <input type="checkbox" name="room_203" value="" id="room_203" />
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <div class="submit">
+                        <input type="button" value="上一步" onclick="location='createSubscriptionDtl-1.html'" />
+                        <input type="submit" value="完成" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div id="footer">
+            <p>本系统为Java Web教学而设计，不得作为它用，版权所有Allan<br />联系方式：javamedia@live.cn</p>
+        </div>
     </div>
-  </div>
-  <hr />
-  <div id="footer">
-    <p>本系统为Java Web教学而设计，不得作为它用，版权所有Allan<br />联系方式：javamedia@live.cn</p>
-  </div>
-</div>
 </body>
+
 </html>
