@@ -25,25 +25,25 @@ public class DataInit {
         SubscriptiondtlDaompl subscriptiondtlDaompl = new SubscriptiondtlDaompl();
 
         if (!file.exists()){
-            categoryDao.creatCategoryTable();
             managerDaompl.creatManagerTable();
+
+            categoryDao.creatCategoryTable();
             memberDao.CreatMemberTable();
-            resideDaompl.creatResideTable();
             roomDaompl.creatRoomTable();
+
             subscriptionDaompl.creatSubscriptionTable();
+
             subscriptiondtlDaompl.creatSubscriptiondtlTable();
+            resideDaompl.creatResideTable();
         }else {
-            if (categoryDao.CategoryTableExist() == 0){
-                categoryDao.creatCategoryTable();
-            }
             if (managerDaompl.ManagerTableExist() == 0){
                 managerDaompl.creatManagerTable();
             }
+            if (categoryDao.CategoryTableExist() == 0){
+                categoryDao.creatCategoryTable();
+            }
             if (memberDao.MemberTableExist() == 0){
                 memberDao.CreatMemberTable();
-            }
-            if (resideDaompl.ResideTableExist() == 0){
-                resideDaompl.creatResideTable();
             }
             if (roomDaompl.RoomTableExist() == 0){
                 roomDaompl.creatRoomTable();
@@ -53,6 +53,9 @@ public class DataInit {
             }
             if (subscriptiondtlDaompl.SubscriptiondtlTableExist() == 0){
                 subscriptiondtlDaompl.creatSubscriptiondtlTable();
+            }
+            if (resideDaompl.ResideTableExist() == 0){
+                resideDaompl.creatResideTable();
             }
         }
     }
