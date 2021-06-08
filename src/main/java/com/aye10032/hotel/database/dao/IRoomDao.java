@@ -22,10 +22,11 @@ public interface IRoomDao {
             "        constraint room_pk\n" +
             "            primary key autoincrement,\n" +
             "    cid    INTEGER not null\n" +
-            "        references category,\n" +
+            "        references category\n" +
+            "            on update cascade on delete cascade,\n" +
             "    rno    TEXT,\n" +
             "    status TEXT\n" +
-            ");")
+            ");\n")
     void creatRoomTable();
 
 }
