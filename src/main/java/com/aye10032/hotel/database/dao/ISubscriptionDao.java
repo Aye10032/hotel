@@ -13,10 +13,23 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface ISubscriptionDao {
 
-    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"subscripiton\"")
     Integer SubscriptionTableExist();
 
-    @Update("")
+    @Update("create table subscriptiondtl\n" +
+            "(\n" +
+            "    id         INTEGER not null\n" +
+            "        constraint subscriptiondtl_pk\n" +
+            "            primary key autoincrement,\n" +
+            "    rid        INTEGER\n" +
+            "        references room,\n" +
+            "    sid        INTEGER\n" +
+            "        references subscription,\n" +
+            "    sdate      BLOB    not null,\n" +
+            "    edate      BLOB    not null,\n" +
+            "    residetype INTEGER not null,\n" +
+            "    price      FLOAT   not null\n" +
+            ");")
     void creatSubscriptionTable();
 
 }

@@ -18,12 +18,12 @@ public class Subscriptiondtl {
     public Date sdate;
     public Date edate;
     public String residetype;
-    public String price;
+    public Float price;
 
     public Subscriptiondtl() {
     }
 
-    public Subscriptiondtl(Integer id, Integer rid, Integer sid, Date sdate, Date edate, String residetype, String price) {
+    public Subscriptiondtl(Integer id, Integer rid, Integer sid, Date sdate, Date edate, String residetype, Float price) {
         this.id = id;
         this.rid = rid;
         this.sid = sid;
@@ -81,11 +81,11 @@ public class Subscriptiondtl {
         this.residetype = residetype;
     }
 
-    public String getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 

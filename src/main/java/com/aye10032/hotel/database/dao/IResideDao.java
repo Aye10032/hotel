@@ -13,10 +13,20 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface IResideDao {
 
-    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"reside\"")
     Integer ResideTableExist();
 
-    @Update("")
+    @Update("create table reside\n" +
+            "(\n" +
+            "    id         INTEGER not null\n" +
+            "        constraint reside_pk\n" +
+            "            primary key autoincrement,\n" +
+            "    dtlid      INTEGER not null\n" +
+            "        references subscriptiondtl,\n" +
+            "    residedate BLOB    not null,\n" +
+            "    roomername TEXT,\n" +
+            "    idcard     TEXT\n" +
+            ");")
     void creatResideTable();
 
 }
