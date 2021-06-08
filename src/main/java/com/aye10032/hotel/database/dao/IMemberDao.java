@@ -19,7 +19,7 @@ import java.util.List;
 public interface IMemberDao {
 
     @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
-    Integer TableExist();
+    Integer MemberTableExist();
 
     @Update("create table member\n" +
             "(\n" +

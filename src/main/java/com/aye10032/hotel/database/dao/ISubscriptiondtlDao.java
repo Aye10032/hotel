@@ -1,5 +1,8 @@
 package com.aye10032.hotel.database.dao;
 
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
 /**
  * @program: hotel
  * @className: IsubscriptiondtlDao
@@ -9,4 +12,11 @@ package com.aye10032.hotel.database.dao;
  * @date: 2021/6/8 下午 2:45
  */
 public interface ISubscriptiondtlDao {
+
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    Integer SubscriptiondtlTableExist();
+
+    @Update("")
+    void creatSubscriptiondtlTable();
+
 }
