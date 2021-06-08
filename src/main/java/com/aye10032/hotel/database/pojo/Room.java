@@ -1,5 +1,7 @@
 package com.aye10032.hotel.database.pojo;
 
+import java.util.Objects;
+
 /**
  * @program: hotel
  * @className: Room
@@ -14,4 +16,69 @@ public class Room {
     public Integer cid;
     public String no;
     public String status;
+
+    public Room() {
+    }
+
+    public Room(Integer id, Integer cid, String no, String status) {
+        this.id = id;
+        this.cid = cid;
+        this.no = no;
+        this.status = status;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return Objects.equals(id, room.id) && Objects.equals(cid, room.cid) && Objects.equals(no, room.no) && Objects.equals(status, room.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, cid, no, status);
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", cid=" + cid +
+                ", no='" + no + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
