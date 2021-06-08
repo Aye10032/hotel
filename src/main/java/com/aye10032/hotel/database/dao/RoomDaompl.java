@@ -44,11 +44,24 @@ public class RoomDaompl implements IRoomDao{
 
     @Override
     public Integer RoomTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        result = dao.RoomTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatRoomTable() {
+        initSession();
 
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        dao.creatRoomTable();
+
+        session.commit();
+        closeAll();
     }
 }

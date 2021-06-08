@@ -44,11 +44,24 @@ public class ManagerDaompl implements IManagerDao{
 
     @Override
     public Integer ManagerTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        IManagerDao dao = session.getMapper(IManagerDao.class);
+        result = dao.ManagerTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatManagerTable() {
+        initSession();
 
+        IManagerDao dao = session.getMapper(IManagerDao.class);
+        dao.creatManagerTable();
+
+        session.commit();
+        closeAll();
     }
 }

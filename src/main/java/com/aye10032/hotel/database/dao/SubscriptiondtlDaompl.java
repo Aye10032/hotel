@@ -44,11 +44,24 @@ public class SubscriptiondtlDaompl implements ISubscriptiondtlDao{
 
     @Override
     public Integer SubscriptiondtlTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        ISubscriptiondtlDao dao = session.getMapper(ISubscriptiondtlDao.class);
+        result = dao.SubscriptiondtlTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatSubscriptiondtlTable() {
+        initSession();
 
+        ISubscriptiondtlDao dao = session.getMapper(ISubscriptiondtlDao.class);
+        dao.creatSubscriptiondtlTable();
+
+        session.commit();
+        closeAll();
     }
 }

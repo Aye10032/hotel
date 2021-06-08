@@ -44,11 +44,24 @@ public class ResideDaompl implements IResideDao{
 
     @Override
     public Integer ResideTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        IResideDao dao = session.getMapper(IResideDao.class);
+        result = dao.ResideTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatResideTable() {
+        initSession();
 
+        IResideDao dao = session.getMapper(IResideDao.class);
+        dao.creatResideTable();
+
+        session.commit();
+        closeAll();
     }
 }

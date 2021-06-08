@@ -44,11 +44,24 @@ public class CategoryDaoImpl implements ICategoryDao{
 
     @Override
     public Integer CategoryTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        result = dao.CategoryTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatCategoryTable() {
+        initSession();
 
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        dao.creatCategoryTable();
+
+        session.commit();
+        closeAll();
     }
 }

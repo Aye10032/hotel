@@ -44,11 +44,24 @@ public class SubscriptionDaompl implements ISubscriptionDao{
 
     @Override
     public Integer SubscriptionTableExist() {
-        return null;
+        Integer result = null;
+        initSession();
+
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
+        result = dao.SubscriptionTableExist();
+
+        closeAll();
+        return result;
     }
 
     @Override
     public void creatSubscriptionTable() {
+        initSession();
 
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
+        dao.creatSubscriptionTable();
+
+        session.commit();
+        closeAll();
     }
 }
