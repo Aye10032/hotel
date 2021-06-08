@@ -17,6 +17,12 @@
     </environments>
 
     <mappers>
+        <mapper class="com.aye10032.hotel.database.dao.ICategoryDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.IManagerDao"/>
         <mapper class="com.aye10032.hotel.database.dao.IMemberDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.IResideDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.IRoomDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.ISubscriptionDao"/>
+        <mapper class="com.aye10032.hotel.database.dao.ISubscriptiondtlDao"/>
     </mappers>
 </configuration>
