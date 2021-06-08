@@ -13,10 +13,17 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface IManagerDao {
 
-    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"manager\"")
     Integer ManagerTableExist();
 
-    @Update("")
+    @Update("create table manager\n" +
+            "(\n" +
+            "    id       INTEGER not null\n" +
+            "        constraint manager_pk\n" +
+            "            primary key autoincrement,\n" +
+            "    username TEXT    not null,\n" +
+            "    pwd      TEXT    not null\n" +
+            ");")
     void creatManagerTable();
 
 }

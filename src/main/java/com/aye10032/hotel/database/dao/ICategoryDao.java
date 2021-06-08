@@ -13,10 +13,20 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface ICategoryDao {
 
-    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"category\"")
     Integer CategoryTableExist();
 
-    @Update("")
+    @Update("create table category\n" +
+            "(\n" +
+            "    id          INTEGER not null\n" +
+            "        constraint category_pk\n" +
+            "            primary key autoincrement,\n" +
+            "    name        TEXT    not null,\n" +
+            "    code        TEXT    not null,\n" +
+            "    description TEXT,\n" +
+            "    bedprice    FLOAT   not null,\n" +
+            "    roomprice   FLOAT   not null\n" +
+            ");")
     void creatCategoryTable();
 
 }

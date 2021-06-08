@@ -13,10 +13,19 @@ import org.apache.ibatis.annotations.Update;
  */
 public interface IRoomDao {
 
-    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"member\"")
+    @Select("SELECT count(*) FROM sqlite_master WHERE type=\"table\" AND name = \"room\"")
     Integer RoomTableExist();
 
-    @Update("")
+    @Update("create table room\n" +
+            "(\n" +
+            "    id     INTEGER not null\n" +
+            "        constraint room_pk\n" +
+            "            primary key autoincrement,\n" +
+            "    cid    INTEGER not null\n" +
+            "        references category,\n" +
+            "    rno    TEXT,\n" +
+            "    status TEXT\n" +
+            ");")
     void creatRoomTable();
 
 }
