@@ -22,9 +22,11 @@ public interface ISubscriptiondtlDao {
             "        constraint subscriptiondtl_pk\n" +
             "            primary key autoincrement,\n" +
             "    rid        INTEGER\n" +
-            "        references room,\n" +
+            "        references room\n" +
+            "            on update cascade on delete cascade,\n" +
             "    sid        INTEGER\n" +
-            "        references subscription,\n" +
+            "        references subscription\n" +
+            "            on update cascade on delete cascade,\n" +
             "    sdate      BLOB    not null,\n" +
             "    edate      BLOB    not null,\n" +
             "    residetype INTEGER not null,\n" +

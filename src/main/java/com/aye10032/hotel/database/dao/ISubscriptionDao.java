@@ -22,7 +22,8 @@ public interface ISubscriptionDao {
             "        constraint subscription_pk\n" +
             "            primary key autoincrement,\n" +
             "    mid     INTEGER not null\n" +
-            "        references member,\n" +
+            "        references member\n" +
+            "            on update cascade on delete cascade,\n" +
             "    sno     TEXT    not null,\n" +
             "    linkman TEXT    not null,\n" +
             "    email   TEXT    not null,\n" +

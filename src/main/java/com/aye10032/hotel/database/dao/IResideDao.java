@@ -22,7 +22,8 @@ public interface IResideDao {
             "        constraint reside_pk\n" +
             "            primary key autoincrement,\n" +
             "    dtlid      INTEGER not null\n" +
-            "        references subscriptiondtl,\n" +
+            "        references subscriptiondtl\n" +
+            "            on update cascade on delete cascade,\n" +
             "    residedate BLOB    not null,\n" +
             "    roomername TEXT,\n" +
             "    idcard     TEXT\n" +
