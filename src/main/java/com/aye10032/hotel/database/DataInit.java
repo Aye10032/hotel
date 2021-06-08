@@ -1,6 +1,6 @@
 package com.aye10032.hotel.database;
 
-import com.aye10032.hotel.database.dao.MemberDaoImpl;
+import com.aye10032.hotel.database.dao.*;
 
 import java.io.File;
 
@@ -16,12 +16,43 @@ public class DataInit {
 
     public static void init(){
         File file = new File("hotel.db");
-        MemberDaoImpl dao = new MemberDaoImpl();
+        CategoryDaoImpl categoryDao = new CategoryDaoImpl();
+        ManagerDaompl managerDaompl = new ManagerDaompl();
+        MemberDaoImpl memberDao = new MemberDaoImpl();
+        ResideDaompl resideDaompl = new ResideDaompl();
+        RoomDaompl roomDaompl = new RoomDaompl();
+        SubscriptionDaompl subscriptionDaompl = new SubscriptionDaompl();
+        SubscriptiondtlDaompl subscriptiondtlDaompl = new SubscriptiondtlDaompl();
+
         if (!file.exists()){
-            dao.CreatMemberTable();
+            categoryDao.creatCategoryTable();
+            managerDaompl.creatManagerTable();
+            memberDao.CreatMemberTable();
+            resideDaompl.creatResideTable();
+            roomDaompl.creatRoomTable();
+            subscriptionDaompl.creatSubscriptionTable();
+            subscriptiondtlDaompl.creatSubscriptiondtlTable();
         }else {
-            if (dao.MemberTableExist() == 0){
-                dao.CreatMemberTable();
+            if (categoryDao.CategoryTableExist() == 0){
+                categoryDao.creatCategoryTable();
+            }
+            if (managerDaompl.ManagerTableExist() == 0){
+                managerDaompl.creatManagerTable();
+            }
+            if (memberDao.MemberTableExist() == 0){
+                memberDao.CreatMemberTable();
+            }
+            if (resideDaompl.ResideTableExist() == 0){
+                resideDaompl.creatResideTable();
+            }
+            if (roomDaompl.RoomTableExist() == 0){
+                roomDaompl.creatRoomTable();
+            }
+            if (subscriptionDaompl.SubscriptionTableExist() == 0){
+                subscriptionDaompl.creatSubscriptionTable();
+            }
+            if (subscriptiondtlDaompl.SubscriptiondtlTableExist() == 0){
+                subscriptiondtlDaompl.creatSubscriptiondtlTable();
             }
         }
     }
