@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 /**
  * @program: hotel
  * @className: ICategoryDao
@@ -36,7 +38,7 @@ public interface ICategoryDao {
             "('name','code','description','bedprice','roomprice') VALUES " +
             "(#{name}, #{code}, #{description}, #{bedprice}, #{roomprice});")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
-    void insertCategoryTable(Category category);
+    Integer insertCategoryTable(Category category);
 
     @Update("DELETE FROM 'category'"+
             "WHERE ID=#{id}")
@@ -48,5 +50,5 @@ public interface ICategoryDao {
     void updateCategoryTable(Category category);
 
     @Select("SELECT * FROM 'category' WHERE id=#{id}")
-    void selectCategoryTable(Integer id);
+    List<Category> selectCategoryTable(Integer id);
 }

@@ -1,5 +1,7 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Category;
+import com.aye10032.hotel.database.pojo.Member;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -7,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -63,5 +66,51 @@ public class CategoryDaoImpl implements ICategoryDao{
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer insertCategoryTable(Category category) {
+        initSession();
+
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        dao.insertCategoryTable(category);
+
+        session.commit();
+        closeAll();
+        return category.getId();
+    }
+
+    @Override
+    public void dropCategoryTable(Integer id) {
+        initSession();
+
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        dao.dropCategoryTable(id);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public void updateCategoryTable(Category category) {
+        initSession();
+
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        dao.updateCategoryTable(category);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public List<Category> selectCategoryTable(Integer id) {
+        List<Category> categories = null;
+        initSession();
+
+        ICategoryDao dao = session.getMapper(ICategoryDao.class);
+        categories = dao.selectCategoryTable(id);
+
+        closeAll();
+        return categories;
     }
 }
