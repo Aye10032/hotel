@@ -69,21 +69,47 @@ public class RoomDaompl implements IRoomDao{
 
     @Override
     public Integer insertRoomTable(Room room) {
-        return null;
+        initSession();
+
+        IRoomDao dao=session.getMapper(IRoomDao.class);
+        dao.insertRoomTable(room);
+
+        session.commit();
+        closeAll();
+        return room.getId();
     }
 
     @Override
     public void dropRoomTable(Integer id) {
+        initSession();
 
+        IRoomDao dao=session.getMapper(IRoomDao.class);
+        dao.dropRoomTable(id);
+
+        session.commit();
+        closeAll();
     }
 
     @Override
     public void updateRoomTable(Room room) {
+        initSession();
 
+        IRoomDao dao=session.getMapper(IRoomDao.class);
+        dao.updateRoomTable(room);
+
+        session.commit();
+        closeAll();
     }
 
     @Override
     public List<Room> selectRoomTable(Integer id) {
-        return null;
+        List<Room> rooms=null;
+        initSession();
+
+        IRoomDao dao=session.getMapper(IRoomDao.class);
+        rooms=dao.selectRoomTable(id);
+
+        closeAll();
+        return rooms;
     }
 }
