@@ -1,5 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Manager;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -7,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -63,5 +65,51 @@ public class ManagerDaompl implements IManagerDao{
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer insertManagerTable(Manager manager) {
+        initSession();
+
+        IManagerDao dao=session.getMapper(IManagerDao.class);
+        dao.insertManagerTable(manager);
+
+        session.commit();
+        closeAll();
+        return manager.getId();
+    }
+
+    @Override
+    public void dropManagerTable(Integer id) {
+        initSession();
+
+        IManagerDao dao=session.getMapper(IManagerDao.class);
+        dao.dropManagerTable(id);
+
+        session.commit();
+    }
+
+    @Override
+    public void updateManagerTable(Manager manager) {
+        initSession();
+
+        IManagerDao dao=session.getMapper(IManagerDao.class);
+        dao.updateManagerTable(manager);
+
+        session.commit();
+        closeAll();
+
+    }
+
+    @Override
+    public List<Manager> selectManagerTable(Integer id) {
+        List<Manager> managers=null;
+        initSession();
+
+        IManagerDao dao=session.getMapper(IManagerDao.class);
+        managers =dao.selectManagerTable(id);
+
+        closeAll();
+        return managers;
     }
 }

@@ -1,7 +1,12 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Manager;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 /**
  * @program: hotel
@@ -26,4 +31,21 @@ public interface IManagerDao {
             ");")
     void creatManagerTable();
 
+    @Insert("INSERT INTO 'manager'" +
+            "('username','pwd') VALUES " +
+            "(#{username}, #{pwd});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    Integer insertManagerTable(Manager manager);
+
+    @Update("DELETE FROM 'manager'"+
+            "WHERE ID=#{id};")
+    void dropManagerTable(Integer id);
+
+    @Update("UPDATE 'manager' SET " +
+            "name=#{name},pwd=#{pwd} " +
+            "where id=#{id};")
+    void updateManagerTable(Manager manager);
+
+    @Select("SELECT * FROM 'manager' WHERE id=#{id}")
+    List<Manager> selectManagerTable(Integer id);
 }
