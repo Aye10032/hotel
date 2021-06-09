@@ -18,7 +18,7 @@ import java.util.List;
  * @author: DoubleZhuang
  * @date: 2021/6/8 16:14
  */
-public class ManagerDaompl implements IManagerDao{
+public class ManagerDaompl implements IManagerDao {
 
     private InputStream in;
     private SqlSession session;
@@ -71,7 +71,7 @@ public class ManagerDaompl implements IManagerDao{
     public Integer insertManagerTable(Manager manager) {
         initSession();
 
-        IManagerDao dao=session.getMapper(IManagerDao.class);
+        IManagerDao dao = session.getMapper(IManagerDao.class);
         dao.insertManagerTable(manager);
 
         session.commit();
@@ -83,7 +83,7 @@ public class ManagerDaompl implements IManagerDao{
     public void dropManagerTable(Integer id) {
         initSession();
 
-        IManagerDao dao=session.getMapper(IManagerDao.class);
+        IManagerDao dao = session.getMapper(IManagerDao.class);
         dao.dropManagerTable(id);
 
         session.commit();
@@ -93,7 +93,7 @@ public class ManagerDaompl implements IManagerDao{
     public void updateManagerTable(Manager manager) {
         initSession();
 
-        IManagerDao dao=session.getMapper(IManagerDao.class);
+        IManagerDao dao = session.getMapper(IManagerDao.class);
         dao.updateManagerTable(manager);
 
         session.commit();
@@ -103,11 +103,11 @@ public class ManagerDaompl implements IManagerDao{
 
     @Override
     public List<Manager> selectManagerTable(Integer id) {
-        List<Manager> managers=null;
+        List<Manager> managers = null;
         initSession();
 
-        IManagerDao dao=session.getMapper(IManagerDao.class);
-        managers =dao.selectManagerTable(id);
+        IManagerDao dao = session.getMapper(IManagerDao.class);
+        managers = dao.selectManagerTable(id);
 
         closeAll();
         return managers;

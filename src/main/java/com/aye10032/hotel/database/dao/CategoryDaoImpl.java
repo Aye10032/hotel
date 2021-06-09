@@ -1,7 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
 import com.aye10032.hotel.database.pojo.Category;
-import com.aye10032.hotel.database.pojo.Member;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -19,7 +18,7 @@ import java.util.List;
  * @author: Aye10032
  * @date: 2021/6/8 下午 4:08
  */
-public class CategoryDaoImpl implements ICategoryDao{
+public class CategoryDaoImpl implements ICategoryDao {
 
     private InputStream in;
     private SqlSession session;

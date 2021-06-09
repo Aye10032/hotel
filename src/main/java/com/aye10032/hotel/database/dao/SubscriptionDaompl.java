@@ -18,7 +18,7 @@ import java.util.List;
  * @author: DoubleZhuang
  * @date: 2021/6/8 16:21
  */
-public class SubscriptionDaompl implements ISubscriptionDao{
+public class SubscriptionDaompl implements ISubscriptionDao {
 
     private InputStream in;
     private SqlSession session;
@@ -71,7 +71,7 @@ public class SubscriptionDaompl implements ISubscriptionDao{
     public Integer insertSubscriptionTable(Subscription subscription) {
         initSession();
 
-        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
         dao.insertSubscriptionTable(subscription);
 
         session.commit();
@@ -83,7 +83,7 @@ public class SubscriptionDaompl implements ISubscriptionDao{
     public void dropSubscriptionTable(Integer id) {
         initSession();
 
-        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
         dao.dropSubscriptionTable(id);
 
         session.commit();
@@ -94,7 +94,7 @@ public class SubscriptionDaompl implements ISubscriptionDao{
     public void updateSubscriptionTable(Subscription subscription) {
         initSession();
 
-        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
         dao.updateSubscriptionTable(subscription);
 
         session.commit();
@@ -103,11 +103,11 @@ public class SubscriptionDaompl implements ISubscriptionDao{
 
     @Override
     public List<Subscription> selectSubscriptionTable(Integer id) {
-        List<Subscription> subscriptions=null;
+        List<Subscription> subscriptions = null;
         initSession();
 
-        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
-        subscriptions =dao.selectSubscriptionTable(id);
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
+        subscriptions = dao.selectSubscriptionTable(id);
 
         closeAll();
         return subscriptions;

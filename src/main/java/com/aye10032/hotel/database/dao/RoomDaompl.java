@@ -1,7 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
 import com.aye10032.hotel.database.pojo.Room;
-import com.sun.tools.javac.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -18,7 +18,7 @@ import java.io.InputStream;
  * @author: DoubleZhuang
  * @date: 2021/6/8 16:20
  */
-public class RoomDaompl implements IRoomDao{
+public class RoomDaompl implements IRoomDao {
 
     private InputStream in;
     private SqlSession session;
@@ -71,7 +71,7 @@ public class RoomDaompl implements IRoomDao{
     public Integer insertRoomTable(Room room) {
         initSession();
 
-        IRoomDao dao=session.getMapper(IRoomDao.class);
+        IRoomDao dao = session.getMapper(IRoomDao.class);
         dao.insertRoomTable(room);
 
         session.commit();
@@ -83,7 +83,7 @@ public class RoomDaompl implements IRoomDao{
     public void dropRoomTable(Integer id) {
         initSession();
 
-        IRoomDao dao=session.getMapper(IRoomDao.class);
+        IRoomDao dao = session.getMapper(IRoomDao.class);
         dao.dropRoomTable(id);
 
         session.commit();
@@ -94,7 +94,7 @@ public class RoomDaompl implements IRoomDao{
     public void updateRoomTable(Room room) {
         initSession();
 
-        IRoomDao dao=session.getMapper(IRoomDao.class);
+        IRoomDao dao = session.getMapper(IRoomDao.class);
         dao.updateRoomTable(room);
 
         session.commit();
@@ -103,11 +103,11 @@ public class RoomDaompl implements IRoomDao{
 
     @Override
     public List<Room> selectRoomTable(Integer id) {
-        List<Room> rooms=null;
+        List<Room> rooms = null;
         initSession();
 
-        IRoomDao dao=session.getMapper(IRoomDao.class);
-        rooms=dao.selectRoomTable(id);
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        rooms = dao.selectRoomTable(id);
 
         closeAll();
         return rooms;

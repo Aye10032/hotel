@@ -1,7 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
 import com.aye10032.hotel.database.pojo.Reside;
-import com.sun.tools.javac.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -18,7 +18,7 @@ import java.io.InputStream;
  * @author: DoubleZhuang
  * @date: 2021/6/8 16:18
  */
-public class ResideDaompl implements IResideDao{
+public class ResideDaompl implements IResideDao {
 
     private InputStream in;
     private SqlSession session;
@@ -71,7 +71,7 @@ public class ResideDaompl implements IResideDao{
     public Integer insertResideTable(Reside reside) {
         initSession();
 
-        IResideDao dao=session.getMapper(IResideDao.class);
+        IResideDao dao = session.getMapper(IResideDao.class);
         dao.insertResideTable(reside);
 
         session.commit();
@@ -84,7 +84,7 @@ public class ResideDaompl implements IResideDao{
     public void dropResideTable(Integer id) {
         initSession();
 
-        IResideDao dao=session.getMapper(IResideDao.class);
+        IResideDao dao = session.getMapper(IResideDao.class);
         dao.dropResideTable(id);
 
         session.commit();
@@ -95,7 +95,7 @@ public class ResideDaompl implements IResideDao{
     public void updateResideTable(Reside reside) {
         initSession();
 
-        IResideDao dao=session.getMapper(IResideDao.class);
+        IResideDao dao = session.getMapper(IResideDao.class);
         dao.updateResideTable(reside);
 
         session.commit();
@@ -104,11 +104,11 @@ public class ResideDaompl implements IResideDao{
 
     @Override
     public List<Reside> selectResideTable(Integer id) {
-        List<Reside> resides=null;
+        List<Reside> resides = null;
         initSession();
 
-        IResideDao dao=session.getMapper(IResideDao.class);
-        resides =dao.selectResideTable(id);
+        IResideDao dao = session.getMapper(IResideDao.class);
+        resides = dao.selectResideTable(id);
 
         closeAll();
         return resides;

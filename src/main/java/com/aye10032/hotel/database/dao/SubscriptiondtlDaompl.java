@@ -16,7 +16,7 @@ import java.io.InputStream;
  * @author: DoubleZhuang
  * @date: 2021/6/8 16:23
  */
-public class SubscriptiondtlDaompl implements ISubscriptiondtlDao{
+public class SubscriptiondtlDaompl implements ISubscriptiondtlDao {
 
     private InputStream in;
     private SqlSession session;

@@ -1,11 +1,12 @@
 package com.aye10032.hotel.database.dao;
 
 import com.aye10032.hotel.database.pojo.Room;
-import com.sun.tools.javac.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 /**
  * @program: hotel
