@@ -1,5 +1,9 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Room;
+import com.sun.tools.javac.util.List;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,4 +33,21 @@ public interface IRoomDao {
             ");\n")
     void creatRoomTable();
 
+    @Insert("INSERT INTO 'room'" +
+            "('cid','rno','status') VALUES" +
+            "(#{cid},#{rno},#{status});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    Integer insertRoomTable(Room room);
+
+    @Update("DELETE FROM 'room'" +
+            "WHERE ID=#{id};")
+    void dropRoomTable(Integer id);
+
+    @Update("UPDATE 'room' SET " +
+            "cid=#{cid},rno=#{rno},status=#{status}" +
+            "WHERE id =#{id};")
+    void updateRoomTable(Room room);
+
+    @Select("SELECT * from 'room' WHERE id=#{id}")
+    List<Room> selectRoomTable(Integer id);
 }

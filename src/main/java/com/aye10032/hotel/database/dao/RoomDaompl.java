@@ -1,5 +1,7 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Room;
+import com.sun.tools.javac.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -63,5 +65,25 @@ public class RoomDaompl implements IRoomDao{
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer insertRoomTable(Room room) {
+        return null;
+    }
+
+    @Override
+    public void dropRoomTable(Integer id) {
+
+    }
+
+    @Override
+    public void updateRoomTable(Room room) {
+
+    }
+
+    @Override
+    public List<Room> selectRoomTable(Integer id) {
+        return null;
     }
 }
