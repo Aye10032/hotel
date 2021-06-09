@@ -1,7 +1,12 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Subscription;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 /**
  * @program: hotel
@@ -33,5 +38,23 @@ public interface ISubscriptionDao {
             "    remark  TEXT\n" +
             ");")
     void creatSubscriptionTable();
+
+    @Insert("INSERT INTO 'subscription'" +
+            "('mid','sno','linkman','email','phone','status','cretime','remark') VALUES" +
+            "(#{mid},#{sno},#{linkman},#{email},#{phone},#{status},#{cretime},#{remark});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    Integer insertSubscriptionTable(Subscription subscription);
+
+    @Update("DELETE FROM 'subscription'" +
+            "WHERE ID =#{id}")
+    void  dropSubscriptionTable(Integer id);
+
+    @Update("UPDATE 'subscription' SET" +
+            "mid=#{mid},sno=#{sno},linkman=#{linkman},email=#{email},phone=#{phone},status=#{status},cretime=#{cretime},remark={remark}" +
+            "WHERE id=#{id};")
+    void  updateSubscriptionTable(Subscription subscription);
+
+    @Select("SELECT * FROM 'subscription' WHERE id=#{id}")
+    List<Subscription> selectSubscriptionTable(Integer id);
 
 }

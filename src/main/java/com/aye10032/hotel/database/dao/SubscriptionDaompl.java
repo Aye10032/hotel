@@ -1,5 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Subscription;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -7,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @program: hotel
@@ -63,5 +65,51 @@ public class SubscriptionDaompl implements ISubscriptionDao{
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer insertSubscriptionTable(Subscription subscription) {
+        initSession();
+
+        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        dao.insertSubscriptionTable(subscription);
+
+        session.commit();
+        closeAll();
+        return subscription.getId();
+    }
+
+    @Override
+    public void dropSubscriptionTable(Integer id) {
+        initSession();
+
+        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        dao.dropSubscriptionTable(id);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public void updateSubscriptionTable(Subscription subscription) {
+        initSession();
+
+        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        dao.updateSubscriptionTable(subscription);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public List<Subscription> selectSubscriptionTable(Integer id) {
+        List<Subscription> subscriptions=null;
+        initSession();
+
+        ISubscriptionDao dao=session.getMapper(ISubscriptionDao.class);
+        subscriptions =dao.selectSubscriptionTable(id);
+
+        closeAll();
+        return subscriptions;
     }
 }
