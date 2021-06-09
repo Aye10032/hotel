@@ -1,5 +1,7 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Reside;
+import com.sun.tools.javac.util.List;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -63,5 +65,52 @@ public class ResideDaompl implements IResideDao{
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer insertResideTable(Reside reside) {
+        initSession();
+
+        IResideDao dao=session.getMapper(IResideDao.class);
+        dao.insertResideTable(reside);
+
+        session.commit();
+        closeAll();
+
+        return reside.getId();
+    }
+
+    @Override
+    public void dropResideTable(Integer id) {
+        initSession();
+
+        IResideDao dao=session.getMapper(IResideDao.class);
+        dao.dropResideTable(id);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public void updateResideTable(Reside reside) {
+        initSession();
+
+        IResideDao dao=session.getMapper(IResideDao.class);
+        dao.updateResideTable(reside);
+
+        session.commit();
+        closeAll();
+    }
+
+    @Override
+    public List<Reside> selectResideTable(Integer id) {
+        List<Reside> resides=null;
+        initSession();
+
+        IResideDao dao=session.getMapper(IResideDao.class);
+        resides =dao.selectResideTable(id);
+
+        closeAll();
+        return resides;
     }
 }

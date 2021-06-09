@@ -1,5 +1,9 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Reside;
+import com.sun.tools.javac.util.List;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,5 +33,23 @@ public interface IResideDao {
             "    idcard     TEXT\n" +
             ");")
     void creatResideTable();
+
+    @Insert("INSERT INTO 'reside'"+
+            "('dtlid','residedate','roomername','idcard') VALUES "+
+            "(#{dtlid},#{residedate},#{roomername},#{idcard});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    Integer insertResideTable(Reside reside);
+
+    @Update("DELETE FROM 'reside'" +
+            "WHERE ID =#{id}")
+    void dropResideTable(Integer id);
+
+    @Update("UPDATE 'reside' SET" +
+            "dtlid=#{dtlid},residedate=#{residedate},roomername=#{roomername},idcard=#{idcard}" +
+            "WHERE id=#{id};")
+    void updateResideTable(Reside reside);
+
+    @Select("SELECT * FROM 'reside' WHERE id=#{id}")
+    List<Reside> selectResideTable(Integer id);
 
 }
