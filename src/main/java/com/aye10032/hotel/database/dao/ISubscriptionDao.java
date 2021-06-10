@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -56,6 +57,9 @@ public interface ISubscriptionDao {
 
     @Select("SELECT * FROM 'subscription' WHERE id=#{id}")
     List<Subscription> selectSubscriptionTable(Integer id);
+
+    @Select("SELECT * FROM 'subscription' WHERE mid=#{mid}")
+    Collection<Subscription> selectSubscriptionByMid(Integer mid);
 
     @Select("SELECT MAX(id) FROM 'subscription'")
     List<Subscription> getLastSubscriptionTable();

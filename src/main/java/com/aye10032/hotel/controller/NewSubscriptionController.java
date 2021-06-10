@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * @program: hotel

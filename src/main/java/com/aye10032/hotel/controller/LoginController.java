@@ -44,7 +44,7 @@ public class LoginController {
             return "login";
         }
         session.setAttribute("LoginUser", username);
-        return "redirect:/memberCenter.html";
+        return "redirect:/memberCenter";
     }
 
 }

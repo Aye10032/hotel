@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -108,6 +109,18 @@ public class SubscriptionDaompl implements ISubscriptionDao {
 
         ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
         subscriptions = dao.selectSubscriptionTable(id);
+
+        closeAll();
+        return subscriptions;
+    }
+
+    @Override
+    public Collection<Subscription> selectSubscriptionByMid(Integer mid) {
+        Collection<Subscription> subscriptions = null;
+        initSession();
+
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
+        subscriptions = dao.selectSubscriptionByMid(mid);
 
         closeAll();
         return subscriptions;
