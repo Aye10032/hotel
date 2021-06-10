@@ -33,4 +33,12 @@ public class MemberCenterController {
         model.addAttribute("subs",subscriptions);
         return "memberCenter";
     }
+
+    @RequestMapping("/deletesub")
+    public String deleteSub(Model model, HttpSession session){
+        SubscriptionDaompl dao = new SubscriptionDaompl();
+        dao.dropSubscriptionTable(
+                Util.getMemberID(session.getAttribute("LoginUser").toString()));
+        return "redirect:/memberCenter";
+    }
 }
