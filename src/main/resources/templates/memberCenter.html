@@ -98,15 +98,15 @@
         </thead>
         <tbody>
           <tr th:each="sub:${subs}">
-            <td th:text="${sub.getCretime()}"></td>
-            <td th:text="${sub.getMid()}"></td>
+            <td th:text="${#dates.format(sub.getCretime(), 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${sub.getSno()}"></td>
             <td th:text="${sub.getLinkman()}"></td>
             <td th:text="${sub.getPhone()}"></td>
             <td th:text="${sub.getEmail()}"></td>
             <td>
               <div>
                 <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
-                <a th:href="@{editSubscription.html}">联系人信息</a>
+                <a th:href="@{/editSubscription/{id}(id=${sub.getId()})}">联系人信息</a>
                 <a th:href="@{subscriptionDetail.html}">客房信息</a>
               </div>
             </td>
