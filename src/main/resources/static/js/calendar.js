@@ -1,5 +1,5 @@
 /**
-* ·µ»ØÈÕÆÚ
+* è¿”å›æ—¥æœŸ
 * @param d the delimiter
 * @param p the pattern of your date
 */
@@ -18,7 +18,7 @@ String.prototype.toDate = function(x, p) {
 }
 
 /**
-* ¸ñÊ½»¯ÈÕÆÚ
+* æ ¼å¼åŒ–æ—¥æœŸ
 * @param    style the pattern of your date
 * @author   meizz
 */
@@ -29,7 +29,7 @@ Date.prototype.format = function(style) {
      "h+" : this.getHours(),      //hour
      "m+" : this.getMinutes(),    //minute
      "s+" : this.getSeconds(),    //second
-     "w+" : "ÌìÒ»¶şÈıËÄÎåÁù".charAt(this.getDay()),    //week
+     "w+" : "å¤©ä¸€äºŒä¸‰å››äº”å…­".charAt(this.getDay()),    //week
      "q+" : Math.floor((this.getMonth() + 3) / 3),   //quarter
      "S"   : this.getMilliseconds() //millisecond
    }
@@ -48,10 +48,10 @@ Date.prototype.format = function(style) {
 };
 
 /**
-* ÈÕÀúÀà
+* æ—¥å†ç±»
 * @param    beginYear 1990
 * @param    endYear    2010
-* @param    lang       1(ÖĞÎÄ)|0(Ó¢Óï) ¿É×ÔÓÉÀ©³ä
+* @param    lang       1(ä¸­æ–‡)|0(è‹±è¯­) å¯è‡ªç”±æ‰©å……
 * @param    dateFormatStyle   "yyyy-MM-dd";
 * @version 2006-04-01
 * @author   KimSoft (jinqinghua [at] gmail.com)
@@ -60,7 +60,7 @@ Date.prototype.format = function(style) {
 function Calendar(beginYear, endYear, lang, dateFormatStyle) {
    this.beginYear = 2000;
    this.endYear = 2020;
-   this.lang = 1;             //1(ÖĞÎÄ) | 0(Ó¢ÎÄ)
+   this.lang = 1;             //1(ä¸­æ–‡) | 0(è‹±æ–‡)
    this.dateFormatStyle = "yyyy-MM-dd";
 
    if (beginYear != null && endYear != null){
@@ -86,18 +86,18 @@ function Calendar(beginYear, endYear, lang, dateFormatStyle) {
 
 
    this.colors = {
-   "cur_word"       : "#FFFFFF",   //µ±ÈÕÈÕÆÚÎÄ×ÖÑÕÉ«
-   "cur_bg"         : "#00FF00",   //µ±ÈÕÈÕÆÚµ¥Ôª¸ñ±³Ó°É«
-   "sun_word"       : "#FF0000",   //ĞÇÆÚÌìÎÄ×ÖÑÕÉ«
-   "sat_word"       : "#0000FF",   //ĞÇÆÚÁùÎÄ×ÖÑÕÉ«
-   "td_word_light"  : "#333333",   //µ¥Ôª¸ñÎÄ×ÖÑÕÉ«
-   "td_word_dark"   : "#CCCCCC",   //µ¥Ôª¸ñÎÄ×Ö°µÉ«
-   "td_bg_out"      : "#EFEFEF",   //µ¥Ôª¸ñ±³Ó°É«
-   "td_bg_over"     : "#FFCC00",   //µ¥Ôª¸ñ±³Ó°É«
-   "tr_word"        : "#FFFFFF",   //ÈÕÀúÍ·ÎÄ×ÖÑÕÉ«
-   "tr_bg"          : "#666666",   //ÈÕÀúÍ·±³Ó°É«
-   "input_border"   : "#CCCCCC",   //input¿Ø¼şµÄ±ß¿òÑÕÉ«
-   "input_bg"       : "#EFEFEF"    //input¿Ø¼şµÄ±³Ó°É«
+   "cur_word"       : "#FFFFFF",   //å½“æ—¥æ—¥æœŸæ–‡å­—é¢œè‰²
+   "cur_bg"         : "#00FF00",   //å½“æ—¥æ—¥æœŸå•å…ƒæ ¼èƒŒå½±è‰²
+   "sun_word"       : "#FF0000",   //æ˜ŸæœŸå¤©æ–‡å­—é¢œè‰²
+   "sat_word"       : "#0000FF",   //æ˜ŸæœŸå…­æ–‡å­—é¢œè‰²
+   "td_word_light"  : "#333333",   //å•å…ƒæ ¼æ–‡å­—é¢œè‰²
+   "td_word_dark"   : "#CCCCCC",   //å•å…ƒæ ¼æ–‡å­—æš—è‰²
+   "td_bg_out"      : "#EFEFEF",   //å•å…ƒæ ¼èƒŒå½±è‰²
+   "td_bg_over"     : "#FFCC00",   //å•å…ƒæ ¼èƒŒå½±è‰²
+   "tr_word"        : "#FFFFFF",   //æ—¥å†å¤´æ–‡å­—é¢œè‰²
+   "tr_bg"          : "#666666",   //æ—¥å†å¤´èƒŒå½±è‰²
+   "input_border"   : "#CCCCCC",   //inputæ§ä»¶çš„è¾¹æ¡†é¢œè‰²
+   "input_bg"       : "#EFEFEF"    //inputæ§ä»¶çš„èƒŒå½±è‰²
    }
 
    this.draw();
@@ -108,15 +108,15 @@ function Calendar(beginYear, endYear, lang, dateFormatStyle) {
 }
 
 /**
-* ÈÕÀúÀàÊôĞÔ£¨ÓïÑÔ°ü£¬¿É×ÔÓÉÀ©Õ¹£©
+* æ—¥å†ç±»å±æ€§ï¼ˆè¯­è¨€åŒ…ï¼Œå¯è‡ªç”±æ‰©å±•ï¼‰
 */
 Calendar.language = {
    "year"    : [[""], [""]],
-   "months" : [["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],["Ò»ÔÂ","¶şÔÂ","ÈıÔÂ","ËÄÔÂ","ÎåÔÂ","ÁùÔÂ","ÆßÔÂ","°ËÔÂ","¾ÅÔÂ","Ê®ÔÂ","Ê®Ò»ÔÂ","Ê®¶şÔÂ"]],
-   "weeks"   : [["SUN","MON","TUR","WED","THU","FRI","SAT"],["ÈÕ","Ò»","¶ş","Èı","ËÄ","Îå","Áù"]],
-   "clear"   : [["CLS"],["Çå¿Õ"]],
-   "today"   : [["TODAY"],["½ñÌì"]],
-   "close"   : [["CLOSE"],["¹Ø±Õ"]]
+   "months" : [["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],["ä¸€æœˆ","äºŒæœˆ","ä¸‰æœˆ","å››æœˆ","äº”æœˆ","å…­æœˆ","ä¸ƒæœˆ","å…«æœˆ","ä¹æœˆ","åæœˆ","åä¸€æœˆ","åäºŒæœˆ"]],
+   "weeks"   : [["SUN","MON","TUR","WED","THU","FRI","SAT"],["æ—¥","ä¸€","äºŒ","ä¸‰","å››","äº”","å…­"]],
+   "clear"   : [["CLS"],["æ¸…ç©º"]],
+   "today"   : [["TODAY"],["ä»Šå¤©"]],
+   "close"   : [["CLOSE"],["å…³é—­"]]
 }
 
 Calendar.prototype.draw = function() {
@@ -180,7 +180,7 @@ Calendar.prototype.draw = function() {
 
 }
 
-//Äê·İÏÂÀ­¿ò°ó¶¨Êı¾İ
+//å¹´ä»½ä¸‹æ‹‰æ¡†ç»‘å®šæ•°æ®
 Calendar.prototype.bindYear = function() {
    var cy = this.form.calendarYear;
    cy.length = 0;
@@ -189,7 +189,7 @@ Calendar.prototype.bindYear = function() {
    }
 }
 
-//ÔÂ·İÏÂÀ­¿ò°ó¶¨Êı¾İ
+//æœˆä»½ä¸‹æ‹‰æ¡†ç»‘å®šæ•°æ®
 Calendar.prototype.bindMonth = function() {
    var cm = this.form.calendarMonth;
    cm.length = 0;
@@ -198,7 +198,7 @@ Calendar.prototype.bindMonth = function() {
    }
 }
 
-//ÏòÇ°Ò»ÔÂ
+//å‘å‰ä¸€æœˆ
 Calendar.prototype.goPrevMonth = function(e){
    if (this.year == this.beginYear && this.month == 0){return;}
    this.month--;
@@ -211,7 +211,7 @@ Calendar.prototype.goPrevMonth = function(e){
    this.bindData();
 }
 
-//ÏòºóÒ»ÔÂ
+//å‘åä¸€æœˆ
 Calendar.prototype.goNextMonth = function(e){
    if (this.year == this.endYear && this.month == 11){return;}
    this.month++;
@@ -224,7 +224,7 @@ Calendar.prototype.goNextMonth = function(e){
    this.bindData();
 }
 
-//¸Ä±äSELECTÑ¡ÖĞ×´Ì¬
+//æ”¹å˜SELECTé€‰ä¸­çŠ¶æ€
 Calendar.prototype.changeSelect = function() {
    var cy = this.form.calendarYear;
    var cm = this.form.calendarMonth;
@@ -242,7 +242,7 @@ Calendar.prototype.changeSelect = function() {
    }
 }
 
-//¸üĞÂÄê¡¢ÔÂ
+//æ›´æ–°å¹´ã€æœˆ
 Calendar.prototype.update = function (e){
    this.year   = e.form.calendarYear.options[e.form.calendarYear.selectedIndex].value;
    this.month = e.form.calendarMonth.options[e.form.calendarMonth.selectedIndex].value;
@@ -251,7 +251,7 @@ Calendar.prototype.update = function (e){
    this.bindData();
 }
 
-//°ó¶¨Êı¾İµ½ÔÂÊÓÍ¼
+//ç»‘å®šæ•°æ®åˆ°æœˆè§†å›¾
 Calendar.prototype.bindData = function () {
    var calendar = this;
    var dateArray = this.getMonthViewArray(this.date.getYear(), this.date.getMonth());
@@ -296,7 +296,7 @@ Calendar.prototype.bindData = function () {
    }
 }
 
-//¸ù¾İÄê¡¢ÔÂµÃµ½ÔÂÊÓÍ¼Êı¾İ(Êı×éĞÎÊ½)
+//æ ¹æ®å¹´ã€æœˆå¾—åˆ°æœˆè§†å›¾æ•°æ®(æ•°ç»„å½¢å¼)
 Calendar.prototype.getMonthViewArray = function (y, m) {
    var mvArray = [];
    var dayOfFirstDay = new Date(y, m, 1).getDay();
@@ -310,7 +310,7 @@ Calendar.prototype.getMonthViewArray = function (y, m) {
    return mvArray;
 }
 
-//À©Õ¹ document.getElementById(id) ¶àä¯ÀÀÆ÷¼æÈİĞÔ from meizz tree source
+//æ‰©å±• document.getElementById(id) å¤šæµè§ˆå™¨å…¼å®¹æ€§ from meizz tree source
 Calendar.prototype.getElementById = function(id){
    if (typeof(id) != "string" || id == "") return null;
    if (document.getElementById) return document.getElementById(id);
@@ -318,13 +318,13 @@ Calendar.prototype.getElementById = function(id){
    try {return eval(id);} catch(e){ return null;}
 }
 
-//À©Õ¹ object.getElementsByTagName(tagName)
+//æ‰©å±• object.getElementsByTagName(tagName)
 Calendar.prototype.getElementsByTagName = function(object, tagName){
    if (document.getElementsByTagName) return document.getElementsByTagName(tagName);
    if (document.all) return document.all.tags(tagName);
 }
 
-//È¡µÃHTML¿Ø¼ş¾ø¶ÔÎ»ÖÃ
+//å–å¾—HTMLæ§ä»¶ç»å¯¹ä½ç½®
 Calendar.prototype.getAbsPoint = function (e){
    var x = e.offsetLeft;
    var y = e.offsetTop;
@@ -335,7 +335,7 @@ Calendar.prototype.getAbsPoint = function (e){
    return {"x": x, "y": y};
 }
 
-//ÏÔÊ¾ÈÕÀú
+//æ˜¾ç¤ºæ—¥å†
 Calendar.prototype.show = function (dateControl, popControl) {
    if (dateControl == null){
      throw new Error("arguments[0] is necessary")
@@ -358,13 +358,13 @@ Calendar.prototype.show = function (dateControl, popControl) {
    this.panel.style.visibility = "visible";
 }
 
-//Òş²ØÈÕÀú
+//éšè—æ—¥å†
 Calendar.prototype.hide = function() {
 //   this.setDisplayStyle("select", "visible");
    this.panel.style.visibility = "hidden";
 }
 
-//ÉèÖÃ¿Ø¼şÏÔÊ¾»òÒş²Ø
+//è®¾ç½®æ§ä»¶æ˜¾ç¤ºæˆ–éšè—
 Calendar.prototype.setDisplayStyle = function(tagName, style) {
    var tags = this.getElementsByTagName(null, tagName)
    for(var i = 0; i < tags.length; i++) {
@@ -379,4 +379,4 @@ Calendar.prototype.setDisplayStyle = function(tagName, style) {
 document.write('<div id="calendarPanel" style="position: absolute;visibility: hidden;z-index: 9999;background-color: #FFFFFF;border: 1px solid #CCCCCC;width:175px;font-size:12px;"></div>');
 
 //var calendar = new Calendar();
-//µ÷ÓÃcalendar.show(dateControl, popControl);
+//è°ƒç”¨calendar.show(dateControl, popControl);
