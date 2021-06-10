@@ -39,4 +39,15 @@ public class Util {
             return subscriptions.get(0);
         }
     }
+
+    public static Member findMemberByName(String name){
+        MemberDaoImpl dao = new MemberDaoImpl();
+        List<Member> members = dao.FindMember(name);
+
+        if (members.isEmpty()){
+            return null;
+        }else {
+            return members.get(0);
+        }
+    }
 }
