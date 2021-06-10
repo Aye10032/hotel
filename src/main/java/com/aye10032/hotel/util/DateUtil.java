@@ -32,11 +32,12 @@ public class DateUtil {
         if (subscription != null) {
             String last_sno = subscription.getSno();
             if (last_sno.substring(0, 6).equals(date_str)) {
-                int last_no = Integer.getInteger(last_sno.substring(6));
+                int last_no = Integer.parseInt(last_sno.substring(6));
                 int new_no = last_no + 1;
-                return date_str + new_no;
+                return date_str + String.format("%02d",new_no);
+            }else {
+                return last_sno + "01";
             }
-            return last_sno + "01";
         } else {
             return date_str + "01";
         }

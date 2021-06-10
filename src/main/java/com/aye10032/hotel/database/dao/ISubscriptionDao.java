@@ -61,7 +61,10 @@ public interface ISubscriptionDao {
     @Select("SELECT * FROM 'subscription' WHERE mid=#{mid}")
     Collection<Subscription> selectSubscriptionByMid(Integer mid);
 
-    @Select("SELECT MAX(id) FROM 'subscription'")
+    @Select("SELECT * FROM 'subscription' WHERE sno=#{sno}")
+    List<Subscription> selectSubscriptionBySno(String sno);
+
+    @Select("SELECT * FROM 'subscription' ORDER BY id DESC LIMIT 1;")
     List<Subscription> getLastSubscriptionTable();
 
 }

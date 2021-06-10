@@ -106,7 +106,7 @@
             <td>
               <div>
                 <a href="#" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
-                <a th:href="@{/editSubscription/{id}(id=${sub.getId()})}">联系人信息</a>
+                <a th:href="@{/editSubscription/{id}(id=${sub.getSno()})}">联系人信息</a>
                 <a th:href="@{subscriptionDetail.html}">客房信息</a>
               </div>
             </td>

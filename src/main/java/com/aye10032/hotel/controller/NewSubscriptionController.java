@@ -52,6 +52,6 @@ public class NewSubscriptionController {
         subscription.setRemark("");
         dao.insertSubscriptionTable(subscription);
 //        Member member = dao.FindMember(session.getAttribute("LoginUser").toString()).get(0);
-        return "memberCenter";
+        return "redirect:/memberCenter";
     }
 }

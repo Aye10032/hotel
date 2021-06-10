@@ -20,17 +20,19 @@ class HotelApplicationTests {
 
     @Test
     void testGetID(){
-        System.out.println(Util.getMemberID("Aye10032"));
+//        System.out.println(Util.getMemberID("Aye10032"));
+        System.out.println(Util.getLastSubscription());
     }
+
 
     @Test
     void testDate(){
-        String date_str = DateUtil.getDateStr();
-        System.out.println(date_str);
-        date_str = date_str + "01";
-        System.out.println(date_str);
-        System.out.println(date_str.substring(0,6));
-        System.out.println(date_str.substring(6));
+//        String date_str = DateUtil.getDateStr();
+//        System.out.println(date_str);
+//        date_str = date_str + "01";
+//        System.out.println(date_str);
+//        System.out.println(date_str.substring(0,6));
+//        System.out.println(date_str.substring(6));
 
         System.out.println(DateUtil.getSUB_NO());
     }

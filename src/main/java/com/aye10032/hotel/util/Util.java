@@ -50,4 +50,15 @@ public class Util {
             return members.get(0);
         }
     }
+
+    public static Subscription findSubscriptionBySno(String sno){
+        SubscriptionDaompl dao = new SubscriptionDaompl();
+        List<Subscription> subscriptions = dao.selectSubscriptionBySno(sno);
+
+        if (subscriptions.isEmpty()){
+            return null;
+        }else {
+            return subscriptions.get(0);
+        }
+    }
 }
