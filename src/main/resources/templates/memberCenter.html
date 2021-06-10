@@ -105,7 +105,7 @@
             <td th:text="${sub.getEmail()}"></td>
             <td>
               <div>
-                <a th:href="@{/deletesub}" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
+                <a th:href="@{/deletesub/{sno}(sno=${sub.getSno()})}" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
                 <a th:href="@{/editSubscription/{id}(id=${sub.getSno()})}">联系人信息</a>
                 <a th:href="@{subscriptionDetail.html}">客房信息</a>
               </div>

@@ -81,11 +81,11 @@ public class SubscriptionDaompl implements ISubscriptionDao {
     }
 
     @Override
-    public void dropSubscriptionTable(Integer id) {
+    public void dropSubscriptionTable(String sno) {
         initSession();
 
         ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
-        dao.dropSubscriptionTable(id);
+        dao.dropSubscriptionTable(sno);
 
         session.commit();
         closeAll();

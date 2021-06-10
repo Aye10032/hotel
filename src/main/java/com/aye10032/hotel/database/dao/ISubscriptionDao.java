@@ -40,15 +40,15 @@ public interface ISubscriptionDao {
             ");")
     void creatSubscriptionTable();
 
-    @Insert("INSERT INTO 'subscription'" +
+    @Insert("INSERT INTO 'subscription' " +
             "('mid','sno','linkman','email','phone','status','cretime','remark') VALUES" +
             "(#{mid},#{sno},#{linkman},#{email},#{phone},#{status},#{cretime},#{remark});")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     Integer insertSubscriptionTable(Subscription subscription);
 
-    @Update("DELETE FROM 'subscription'" +
-            "WHERE ID =#{id}")
-    void  dropSubscriptionTable(Integer id);
+    @Update("DELETE FROM 'subscription' " +
+            "WHERE sno=#{sno}")
+    void  dropSubscriptionTable(String sno);
 
     @Update("UPDATE 'subscription' SET " +
             "mid=#{mid},sno=#{sno},linkman=#{linkman},email=#{email},phone=#{phone},status=#{status},cretime=#{cretime},remark=#{remark}" +

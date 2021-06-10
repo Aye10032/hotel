@@ -6,6 +6,7 @@ import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,11 +35,12 @@ public class MemberCenterController {
         return "memberCenter";
     }
 
-    @RequestMapping("/deletesub")
-    public String deleteSub(Model model, HttpSession session){
+    @RequestMapping("/deletesub/{sno}")
+    public String deleteSub(
+            @PathVariable("sno")String sno,
+            Model model, HttpSession session){
         SubscriptionDaompl dao = new SubscriptionDaompl();
-        dao.dropSubscriptionTable(
-                Util.getMemberID(session.getAttribute("LoginUser").toString()));
+        dao.dropSubscriptionTable(sno);
         return "redirect:/memberCenter";
     }
 }
