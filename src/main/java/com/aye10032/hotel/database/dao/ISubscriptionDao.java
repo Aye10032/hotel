@@ -57,4 +57,7 @@ public interface ISubscriptionDao {
     @Select("SELECT * FROM 'subscription' WHERE id=#{id}")
     List<Subscription> selectSubscriptionTable(Integer id);
 
+    @Select("SELECT MAX(id) FROM 'subscription'")
+    List<Subscription> getLastSubscriptionTable();
+
 }

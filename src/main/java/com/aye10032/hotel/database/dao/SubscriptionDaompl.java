@@ -112,4 +112,16 @@ public class SubscriptionDaompl implements ISubscriptionDao {
         closeAll();
         return subscriptions;
     }
+
+    @Override
+    public List<Subscription> getLastSubscriptionTable() {
+        List<Subscription> subscriptions = null;
+        initSession();
+
+        ISubscriptionDao dao = session.getMapper(ISubscriptionDao.class);
+        subscriptions = dao.getLastSubscriptionTable();
+
+        closeAll();
+        return subscriptions;
+    }
 }

@@ -1,11 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="../js/calendar.js"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{style/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
     <style type="text/css">
         form {
             margin: 15px 0;
@@ -69,12 +67,12 @@
                 </ul>
             </div>
             <div class="subcontent">
-                <form th:action="@{memberCenter.html}">
+                <form th:action="@{/newsubscription_action}">
                     <fieldset>
                         <legend>联系人信息</legend>
                         <div>
                             <label for="name">联系人</label>
-                            <input type="text" name="name" id="name" th:value="${name}" />
+                            <input type="text" name="name" id="name"/>
                         </div>
                         <div>
                             <label for="phone">联系电话</label>
