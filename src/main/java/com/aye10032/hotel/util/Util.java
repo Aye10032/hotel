@@ -1,8 +1,11 @@
 package com.aye10032.hotel.util;
 
 import com.aye10032.hotel.database.dao.MemberDaoImpl;
+import com.aye10032.hotel.database.dao.SubscriptionDaompl;
 import com.aye10032.hotel.database.pojo.Member;
+import com.aye10032.hotel.database.pojo.Subscription;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,4 +29,14 @@ public class Util {
         }
     }
 
+    public static Subscription getLastSubscription(){
+        SubscriptionDaompl daompl = new SubscriptionDaompl();
+
+        List<Subscription> subscriptions = daompl.getLastSubscriptionTable();
+        if (subscriptions.isEmpty()){
+            return null;
+        }else {
+            return subscriptions.get(0);
+        }
+    }
 }
