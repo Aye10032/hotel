@@ -55,11 +55,12 @@ public class EditSubscriptionController {
 
         Subscription subscription = Util.findSubscriptionBySno(
                 session.getAttribute("subID").toString());
-        System.out.println(subscription);
         if (subscription!=null) {
             subscription.setLinkman(name);
             subscription.setPhone(phone);
             subscription.setEmail(email);
+
+            System.out.println(subscription);
 
             SubscriptionDaompl dao = new SubscriptionDaompl();
             dao.updateSubscriptionTable(subscription);

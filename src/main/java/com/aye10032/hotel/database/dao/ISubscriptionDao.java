@@ -50,8 +50,8 @@ public interface ISubscriptionDao {
             "WHERE ID =#{id}")
     void  dropSubscriptionTable(Integer id);
 
-    @Update("UPDATE 'subscription' SET" +
-            "mid=#{mid},sno=#{sno},linkman=#{linkman},email=#{email},phone=#{phone},status=#{status},cretime=#{cretime},remark={remark}" +
+    @Update("UPDATE 'subscription' SET " +
+            "mid=#{mid},sno=#{sno},linkman=#{linkman},email=#{email},phone=#{phone},status=#{status},cretime=#{cretime},remark=#{remark}" +
             "WHERE id=#{id};")
     void  updateSubscriptionTable(Subscription subscription);
 
