@@ -36,7 +36,7 @@ public class DateUtil {
                 int new_no = last_no + 1;
                 return date_str + String.format("%02d",new_no);
             }else {
-                return last_sno + "01";
+                return date_str + "01";
             }
         } else {
             return date_str + "01";
