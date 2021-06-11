@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * @date: 2021/5/26 17:00
  */
 @Controller
-public class CreateSubscriptionDtl1Controller {
+public class CreateSubscriptionDtlController {
 
     @RequestMapping("/createSubscriptionDtl-1")
     public String createSubscriptionDtl1(Model model, HttpSession session){
