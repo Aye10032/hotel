@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+    <script type="text/javascript" th:src="@{js/calendar.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{style/style.css}" />
     <style type="text/css">
         div.submit {
             text-align: center;
@@ -64,7 +64,7 @@
             </div>
             <div class="subcontent">
                 <p>下面是满足您预订条件的房间，请选择一个或多个然后点击完成按钮，点击上一步可以更改预定条件。</p>
-                <form th:action="@{/createSubscriptionDtl-3}">
+                <form th:action="@{createSubscriptionDtl-3}">
                     <fieldset>
                         <table>
                             <tr>
@@ -80,50 +80,6 @@
                                 </td>
                             </tr>
                         </table>
-
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <td>-->
-<!--                                    <label for="room_101">101</label>-->
-<!--                                    <input type="checkbox" name="room" value="101" id="room_101" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_102">102</label>-->
-<!--                                    <input type="checkbox" name="room" value="" id="room_102" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_103">103</label>-->
-<!--                                    <input type="checkbox" name="room" value="" id="room_103" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_104">104</label>-->
-<!--                                    <input type="checkbox" name="room" value="" id="room_104" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_105">105</label>-->
-<!--                                    <input type="checkbox" name="room" value="" id="room_105" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_106">106</label>-->
-<!--                                    <input type="checkbox" name="room" value="" id="room_106" />-->
-<!--                                </td>-->
-<!--                            </tr>-->
-
-<!--                            <tr>-->
-<!--                                <td>-->
-<!--                                    <label for="room_201">201</label>-->
-<!--                                    <input type="checkbox" name="room_201" value="" id="room_201" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_202">202</label>-->
-<!--                                    <input type="checkbox" name="room_202" value="" id="room_202" />-->
-<!--                                </td>-->
-<!--                                <td>-->
-<!--                                    <label for="room_103">203</label>-->
-<!--                                    <input type="checkbox" name="room_203" value="" id="room_203" />-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
                     </fieldset>
 
                     <div class="submit">
