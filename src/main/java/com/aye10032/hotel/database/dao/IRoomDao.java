@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -50,4 +51,7 @@ public interface IRoomDao {
 
     @Select("SELECT * from 'room' WHERE id=#{id}")
     List<Room> selectRoomTable(Integer id);
+
+    @Select("SELECT * from 'room' WHERE cid=#{cid} AND status=#{status}")
+    Collection<Room> selectChooseRoom(Room room);
 }

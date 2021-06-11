@@ -87,4 +87,16 @@ public class Util {
         RoomDaompl dao = new RoomDaompl();
         dao.insertRoomTable(room);
     }
+
+    public static void selectRoom(String rootType){
+        Room room = new Room();
+        room.setStatus(StringMSG.ROOM_OPEN);
+        if (rootType.equals("1")){
+            room.setCid(StringMSG.SINGLE_ROOM);
+        }else if (rootType.equals("2")){
+            room.setCid(StringMSG.DOUBLE_ROOM);
+        }else {
+            room.setCid(StringMSG.HUGE_ROOM);
+        }
+    }
 }

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -108,6 +109,18 @@ public class RoomDaompl implements IRoomDao {
 
         IRoomDao dao = session.getMapper(IRoomDao.class);
         rooms = dao.selectRoomTable(id);
+
+        closeAll();
+        return rooms;
+    }
+
+    @Override
+    public Collection<Room> selectChooseRoom(Room room) {
+        Collection<Room> rooms = null;
+        initSession();
+
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        rooms = dao.selectChooseRoom(room);
 
         closeAll();
         return rooms;

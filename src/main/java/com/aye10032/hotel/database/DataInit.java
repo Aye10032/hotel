@@ -85,35 +85,35 @@ public class DataInit {
         RoomDaompl roomDaompl = new RoomDaompl();
         roomDaompl.dropAllRoomTable();
 
-        Util.addRoom(1, "101", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "102", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "103", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "104", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "105", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "106", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "107", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "108", StringMSG.ROOM_OPEN);
-        Util.addRoom(1, "109", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "101", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "102", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "103", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "104", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "105", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "106", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "107", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "108", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.SINGLE_ROOM, "109", StringMSG.ROOM_OPEN);
 
-        Util.addRoom(2, "201", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "202", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "203", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "204", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "205", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "206", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "207", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "208", StringMSG.ROOM_OPEN);
-        Util.addRoom(2, "209", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "201", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "202", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "203", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "204", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "205", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "206", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "207", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "208", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.DOUBLE_ROOM, "209", StringMSG.ROOM_OPEN);
 
-        Util.addRoom(3, "301", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "302", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "303", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "304", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "305", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "306", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "307", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "308", StringMSG.ROOM_OPEN);
-        Util.addRoom(3, "309", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "301", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "302", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "303", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "304", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "305", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "306", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "307", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "308", StringMSG.ROOM_OPEN);
+        Util.addRoom(StringMSG.HUGE_ROOM, "309", StringMSG.ROOM_OPEN);
     }
 
 }
