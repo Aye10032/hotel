@@ -1,7 +1,9 @@
 package com.aye10032.hotel.controller;
 
 import com.aye10032.hotel.database.pojo.Room;
+import com.aye10032.hotel.database.pojo.Subscription;
 import com.aye10032.hotel.database.pojo.Subscriptiondtl;
+import com.aye10032.hotel.util.DateUtil;
 import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +42,15 @@ public class CreateSubscriptionDtlController {
         Iterator<Collection<Room>> rooms = Util.selectRoom(rootType);
         model.addAttribute("rooms1",rooms.next());
         model.addAttribute("rooms2",rooms.next());
+
+        Subscriptiondtl subscription = new Subscriptiondtl();
+        subscription.setSdate(DateUtil.Str2Date(startDate));
+        subscription.setEdate(DateUtil.Str2Date(endDate));
+        subscription.setSid(
+                Util.findSubscriptionBySno(
+                        session.getAttribute("subID")
+                                .toString()).getId());
+        subscription.setResidetype("0");
 
         return "createSubscriptionDtl-2";
     }

@@ -2,6 +2,8 @@ package com.aye10032.hotel.util;
 
 import com.aye10032.hotel.database.pojo.Subscription;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.SimpleFormatter;
@@ -24,6 +26,18 @@ public class DateUtil {
         Date date = getNowTime();
         SimpleDateFormat formatter = new SimpleDateFormat("yy MM dd");
         return formatter.format(date).replace(" ", "");
+    }
+
+    public static Date Str2Date(String date_str){
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = format.parse(date_str);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return date;
     }
 
     public static String getSUB_NO() {
