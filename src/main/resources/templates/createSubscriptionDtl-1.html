@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -76,7 +76,7 @@
         </div>
         <div class="subcontent">
             <p>请输入您要预定的房间类型以及预订的起始日期，系统会显示可用的房间并供您选择。</p>
-            <form th:action="@{createSubscriptionDtl-2.html}">
+            <form th:action="@{/createSubscriptionDtl-2}">
                 <fieldset>
                     <div class="row">
                         <div class="column">
@@ -115,8 +115,8 @@
                     </div>
                 </fieldset>
                 <div class="submit">
-                    <input type="button" value="返回" onclick="location='subscriptionDetail.html'"/>
-                    <input type="button" value="下一步"/>
+                    <input type="button" value="返回" th:onclick="location='/subscriptionDetail'"/>
+                    <input type="submit" value="下一步"/>
                 </div>
             </form>
         </div>

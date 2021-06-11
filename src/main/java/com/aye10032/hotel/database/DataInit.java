@@ -39,18 +39,23 @@ public class DataInit {
 
             subscriptiondtlDaompl.creatSubscriptiondtlTable();
             resideDaompl.creatResideTable();
+
+            initCategory();
+            initRoom();
         }else {
             if (managerDaompl.ManagerTableExist() == 0){
                 managerDaompl.creatManagerTable();
             }
             if (categoryDao.CategoryTableExist() == 0){
                 categoryDao.creatCategoryTable();
+                initCategory();
             }
             if (memberDao.MemberTableExist() == 0){
                 memberDao.CreatMemberTable();
             }
             if (roomDaompl.RoomTableExist() == 0){
                 roomDaompl.creatRoomTable();
+                initRoom();
             }
             if (subscriptionDaompl.SubscriptionTableExist() == 0){
                 subscriptionDaompl.creatSubscriptionTable();
@@ -62,9 +67,6 @@ public class DataInit {
                 resideDaompl.creatResideTable();
             }
         }
-
-        initCategory();
-        initRoom();
     }
 
     public static void  initCategory(){
