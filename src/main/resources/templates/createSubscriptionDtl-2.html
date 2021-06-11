@@ -1,10 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" th:src="@{js/calendar.js}"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{style/style.css}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="js/calendar.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css"></link>
     <style type="text/css">
         div.submit {
             text-align: center;
@@ -46,18 +47,18 @@
         </div>
         <div id="menu">
             <ul>
-                <li><a th:href="@{index.html}">首页</a></li>
-                <li><a th:href="@{roomPrice.html}">设施与价格</a></li>
-                <li><a th:href="@{/memberCenter}">会员中心</a></li>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="roomPrice.html">设施与价格</a></li>
+                <li><a href="memberCenter.html">会员中心</a></li>
             </ul>
         </div>
-        <div id="content" style="width:98%;position:relative">
+        <div id="content">
             <div class="submenu">
                 <ul>
-                    <li><a th:href="@{/memberCenter}">客房预订</a></li>
-                    <li><a th:href="@{historySubscription.html}">历史订单</a></li>
-                    <li><a th:href="@{/editMember}">修改信息</a></li>
-                    <li><a th:href="@{/editPassword}">修改密码</a></li>
+                    <li><a href="memberCenter.html">客房预订</a></li>
+                    <li><a href="historySubscription.html">历史订单</a></li>
+                    <li><a href="editMember.html">修改信息</a></li>
+                    <li><a href="editPassword.html">修改密码</a></li>
                     <li><a th:href="@{/exit_page}">退出系统</a></li>
                 </ul>
             </div>
