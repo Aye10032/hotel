@@ -80,11 +80,11 @@ public class RoomDaompl implements IRoomDao {
     }
 
     @Override
-    public void dropRoomTable(Integer id) {
+    public void dropAllRoomTable() {
         initSession();
 
         IRoomDao dao = session.getMapper(IRoomDao.class);
-        dao.dropRoomTable(id);
+        dao.dropAllRoomTable();
 
         session.commit();
         closeAll();

@@ -80,11 +80,11 @@ public class CategoryDaoImpl implements ICategoryDao {
     }
 
     @Override
-    public void dropCategoryTable(Integer id) {
+    public void dropCategoryTable() {
         initSession();
 
         ICategoryDao dao = session.getMapper(ICategoryDao.class);
-        dao.dropCategoryTable(id);
+        dao.dropCategoryTable();
 
         session.commit();
         closeAll();

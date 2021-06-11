@@ -14,4 +14,7 @@ public class StringMSG {
     public static String STATUS_CANCEL = "1";
     public static String STATUS_WAIT = "2";
 
+    public static String ROOM_OPEN = "o";
+    public static String ROOM_CLOSE = "c";
+
 }

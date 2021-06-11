@@ -1,6 +1,10 @@
 package com.aye10032.hotel.database;
 
 import com.aye10032.hotel.database.dao.*;
+import com.aye10032.hotel.database.pojo.Category;
+import com.aye10032.hotel.database.pojo.Room;
+import com.aye10032.hotel.util.StringMSG;
+import com.aye10032.hotel.util.Util;
 
 import java.io.File;
 
@@ -58,6 +62,56 @@ public class DataInit {
                 resideDaompl.creatResideTable();
             }
         }
+
+        initCategory();
+        initRoom();
+    }
+
+    public static void  initCategory(){
+        ICategoryDao dao = new CategoryDaoImpl();
+        dao.dropCategoryTable();
+
+        Util.addCategory("普通双人间", "rcat01", 50.0F, 80.0F,
+                "房间面积：20平米。配有单人床两个、市话、长途服务、独立卫生间、淋浴、24小时热水、电视、空调。");
+        Util.addCategory("舒适双人间", "rcat02", 100.0F, 160.0F,
+                "房间面积：30平米。配有双人人床一个、市话、长途服务、独立卫生间、淋浴、24小时热水、电视、空调。");
+        Util.addCategory("豪华双人间", "rcat03", 150.0F, 260.0F,
+                "房间面积：40平米。配有单人床两个、市话、长途服务、独立卫生间、淋浴、24小时热水、电视、空调。");
+    }
+
+    public static void initRoom(){
+        RoomDaompl roomDaompl = new RoomDaompl();
+        roomDaompl.dropAllRoomTable();
+
+        Util.addRoom(1, "101", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "102", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "103", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "104", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "105", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "106", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "107", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "108", StringMSG.ROOM_OPEN);
+        Util.addRoom(1, "109", StringMSG.ROOM_OPEN);
+
+        Util.addRoom(2, "201", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "202", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "203", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "204", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "205", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "206", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "207", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "208", StringMSG.ROOM_OPEN);
+        Util.addRoom(2, "209", StringMSG.ROOM_OPEN);
+
+        Util.addRoom(3, "301", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "302", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "303", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "304", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "305", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "306", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "307", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "308", StringMSG.ROOM_OPEN);
+        Util.addRoom(3, "309", StringMSG.ROOM_OPEN);
     }
 
 }

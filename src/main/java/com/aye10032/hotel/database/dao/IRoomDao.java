@@ -40,9 +40,8 @@ public interface IRoomDao {
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     Integer insertRoomTable(Room room);
 
-    @Update("DELETE FROM 'room'" +
-            "WHERE ID=#{id};")
-    void dropRoomTable(Integer id);
+    @Update("DELETE FROM 'room'")
+    void dropAllRoomTable();
 
     @Update("UPDATE 'room' SET " +
             "cid=#{cid},rno=#{rno},status=#{status}" +

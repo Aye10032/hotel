@@ -1,8 +1,12 @@
 package com.aye10032.hotel.util;
 
+import com.aye10032.hotel.database.dao.CategoryDaoImpl;
 import com.aye10032.hotel.database.dao.MemberDaoImpl;
+import com.aye10032.hotel.database.dao.RoomDaompl;
 import com.aye10032.hotel.database.dao.SubscriptionDaompl;
+import com.aye10032.hotel.database.pojo.Category;
 import com.aye10032.hotel.database.pojo.Member;
+import com.aye10032.hotel.database.pojo.Room;
 import com.aye10032.hotel.database.pojo.Subscription;
 
 import java.util.Date;
@@ -60,5 +64,27 @@ public class Util {
         }else {
             return subscriptions.get(0);
         }
+    }
+
+    public static void addCategory(String name, String code, Float bedprice, Float roomprice, String desc){
+        Category category = new Category();
+        category.setName(name);
+        category.setCode(code);
+        category.setBedprice(bedprice);
+        category.setRoomprice(roomprice);
+        category.setDescription(desc);
+
+        CategoryDaoImpl dao = new CategoryDaoImpl();
+        dao.insertCategoryTable(category);
+    }
+
+    public static void addRoom(Integer cid, String no, String status){
+        Room room = new Room();
+        room.setCid(cid);
+        room.setRno(no);
+        room.setStatus(status);
+
+        RoomDaompl dao = new RoomDaompl();
+        dao.insertRoomTable(room);
     }
 }
