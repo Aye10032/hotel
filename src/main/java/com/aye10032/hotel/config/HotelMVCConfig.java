@@ -35,7 +35,7 @@ public class HotelMVCConfig implements WebMvcConfigurer {
         registry.addViewController("/editPassword.html").setViewName("editPassword");
 
         registry.addViewController("/createSubscriptionDtl-1.html").setViewName("createSubscriptionDtl-1");
-        registry.addViewController("/createSubscriptionDtl-2.html").setViewName("/createSubscriptionDtl-2");
+        registry.addViewController("/createSubscriptionDtl-2.html").setViewName("createSubscriptionDtl-2");
         registry.addViewController("/createSubscriptionDtl-3.html").setViewName("createSubscriptionDtl-3");//静态页面无需controller
         registry.addViewController("/mySubscription.html").setViewName("mySubscription");
         registry.addViewController("/newSubscription.html").setViewName("newSubscription");

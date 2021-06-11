@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -40,9 +41,8 @@ public interface IRoomDao {
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     Integer insertRoomTable(Room room);
 
-    @Update("DELETE FROM 'room'" +
-            "WHERE ID=#{id};")
-    void dropRoomTable(Integer id);
+    @Update("DELETE FROM 'room'")
+    void dropAllRoomTable();
 
     @Update("UPDATE 'room' SET " +
             "cid=#{cid},rno=#{rno},status=#{status}" +
@@ -51,4 +51,7 @@ public interface IRoomDao {
 
     @Select("SELECT * from 'room' WHERE id=#{id}")
     List<Room> selectRoomTable(Integer id);
+
+    @Select("SELECT * from 'room' WHERE cid=#{cid} AND status=#{status}")
+    Collection<Room> selectChooseRoom(Room room);
 }

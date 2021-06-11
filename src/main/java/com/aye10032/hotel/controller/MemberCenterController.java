@@ -30,7 +30,6 @@ public class MemberCenterController {
         SubscriptionDaompl daompl = new SubscriptionDaompl();
         Collection<Subscription> subscriptions = daompl.selectSubscriptionByMid(
                 Util.getMemberID(session.getAttribute("LoginUser").toString()));
-        System.out.println(subscriptions);
         model.addAttribute("subs",subscriptions);
         return "memberCenter";
     }

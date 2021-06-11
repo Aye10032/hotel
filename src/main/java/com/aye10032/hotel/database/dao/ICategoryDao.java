@@ -40,9 +40,8 @@ public interface ICategoryDao {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     Integer insertCategoryTable(Category category);
 
-    @Update("DELETE FROM 'category'"+
-            "WHERE ID=#{id}")
-    void dropCategoryTable(Integer id);
+    @Update("DELETE FROM 'category'")
+    void dropCategoryTable();
 
     @Update("UPDATE 'category' SET " +
             "name=#{name},code=#{code},description=#{description},bedprice=#{bedprice},roomprice=#{roomprice} " +
