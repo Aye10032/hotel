@@ -37,4 +37,9 @@ class HotelApplicationTests {
         System.out.println(DateUtil.getSUB_NO());
     }
 
+    @Test
+    void testGetRoom(){
+        System.out.println(Util.selectRoom("2"));
+    }
+
 }

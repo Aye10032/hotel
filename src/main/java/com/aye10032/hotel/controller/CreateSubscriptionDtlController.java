@@ -1,12 +1,17 @@
 package com.aye10032.hotel.controller;
 
+import com.aye10032.hotel.database.pojo.Room;
 import com.aye10032.hotel.database.pojo.Subscriptiondtl;
+import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * @program: hotel
@@ -31,10 +36,19 @@ public class CreateSubscriptionDtlController {
             @RequestParam("startDate")String startDate,
             @RequestParam("endDate")String endDate,
             Model model, HttpSession session){
-        System.out.println(rootType);
-        System.out.println(bookType);
-        System.out.println(startDate);
-        System.out.println(endDate);
+
+        Iterator<Collection<Room>> rooms = Util.selectRoom(rootType);
+        model.addAttribute("rooms1",rooms.next());
+        model.addAttribute("rooms2",rooms.next());
+
         return "createSubscriptionDtl-2";
+    }
+
+    @RequestMapping("/createSubscriptionDtl-3")
+    public String createSubscriptionDtl3(
+            @RequestParam("room")String[] rooms
+    ){
+        System.out.println(Arrays.toString(rooms));
+        return "createSubscriptionDtl-3";
     }
 }

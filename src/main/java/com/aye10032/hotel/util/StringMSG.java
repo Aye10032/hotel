@@ -10,15 +10,15 @@ package com.aye10032.hotel.util;
  */
 public class StringMSG {
 
-    public static String STATUS_YES = "0";
-    public static String STATUS_CANCEL = "1";
-    public static String STATUS_WAIT = "2";
+    public static final String STATUS_YES = "0";
+    public static final String STATUS_CANCEL = "1";
+    public static final String STATUS_WAIT = "2";
 
-    public static Integer SINGLE_ROOM = 1;
-    public static Integer DOUBLE_ROOM = 2;
-    public static Integer HUGE_ROOM = 3;
+    public static final Integer SINGLE_ROOM = 1;
+    public static final Integer DOUBLE_ROOM = 2;
+    public static final Integer HUGE_ROOM = 3;
 
-    public static String ROOM_OPEN = "o";
-    public static String ROOM_CLOSE = "c";
+    public static final String ROOM_OPEN = "o";
+    public static final String ROOM_CLOSE = "c";
 
 }
