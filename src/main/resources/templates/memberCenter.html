@@ -107,14 +107,14 @@
               <div>
                 <a th:href="@{/deletesub/{sno}(sno=${sub.getSno()})}" onclick="return confirm('真的要删除该订单及其明细信息吗？')">删除</a>
                 <a th:href="@{/editSubscription/{id}(id=${sub.getSno()})}">联系人信息</a>
-                <a th:href="@{subscriptionDetail.html}">客房信息</a>
+                <a th:href="@{/subscriptionDetail/{sno}(sno=${sub.getSno()})}">客房信息</a>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
       <div class="button">
-        <input type="button" value="新建订单" onclick="location='newSubscription.html'"/>
+        <input type="button" value="新建订单" th:onclick="location='/newSubscription'"/>
       </div>
     </div>
   </div>
