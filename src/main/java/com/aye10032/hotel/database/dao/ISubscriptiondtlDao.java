@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.Collection;
+
 /**
  * @program: hotel
  * @className: IsubscriptiondtlDao
@@ -43,4 +45,6 @@ public interface ISubscriptiondtlDao {
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     Integer InsertSubscriptiondtl(Subscriptiondtl subscriptiondtl);
 
+    @Select("SELECT * FROM 'subscriptiondtl' WHERE sid=#{sid}")
+    Collection<Subscriptiondtl> selectSubscriptiondtlBySid(Integer sid);
 }

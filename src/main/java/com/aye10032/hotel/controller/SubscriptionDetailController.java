@@ -1,11 +1,17 @@
 package com.aye10032.hotel.controller;
 
+import com.aye10032.hotel.database.dao.SubscriptionDaompl;
+import com.aye10032.hotel.database.dao.SubscriptiondtlDaompl;
+import com.aye10032.hotel.database.pojo.SubdtlTemp;
+import com.aye10032.hotel.database.pojo.Subscriptiondtl;
+import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collection;
 
 /**
  * @program: hotel
@@ -28,7 +34,15 @@ public class SubscriptionDetailController {
     }
 
     @RequestMapping("/subscriptionDetail")
-    public String subscriptionDetail(){
+    public String subscriptionDetail(Model model, HttpSession session){
+        SubscriptiondtlDaompl dao = new SubscriptiondtlDaompl();
+        Collection<Subscriptiondtl> subscriptiondtls =
+                dao.selectSubscriptiondtlBySid(
+                        Util.findSubscriptionBySno(session.getAttribute("subID").toString()).getId());
+
+        Collection<SubdtlTemp> subdtlTemps = Util.dtl2temp(subscriptiondtls);
+
+        model.addAttribute("dtls",subdtlTemps);
         return "subscriptionDetail";
     }
 

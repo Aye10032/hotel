@@ -4,10 +4,7 @@ import com.aye10032.hotel.database.dao.CategoryDaoImpl;
 import com.aye10032.hotel.database.dao.MemberDaoImpl;
 import com.aye10032.hotel.database.dao.RoomDaompl;
 import com.aye10032.hotel.database.dao.SubscriptionDaompl;
-import com.aye10032.hotel.database.pojo.Category;
-import com.aye10032.hotel.database.pojo.Member;
-import com.aye10032.hotel.database.pojo.Room;
-import com.aye10032.hotel.database.pojo.Subscription;
+import com.aye10032.hotel.database.pojo.*;
 
 import java.util.*;
 
@@ -172,5 +169,45 @@ public class Util {
         List<Room> rooms = roomDaompl.selectRoomByRno(rno);
 
         return rooms.get(0);
+    }
+
+    public static SubdtlTemp getSubDtl(Subscriptiondtl subscriptiondtl){
+        SubdtlTemp sub = new SubdtlTemp();
+
+        Room room = new RoomDaompl().selectRoomTable(subscriptiondtl.getRid()).get(0);
+
+        sub.setId(subscriptiondtl.getId());
+        sub.setSdate(subscriptiondtl.getSdate());
+        sub.setEdate(subscriptiondtl.getEdate());
+        sub.setPrice(subscriptiondtl.getPrice());
+        sub.setRes_type(subscriptiondtl.getResidetype());
+        sub.setRno(room.getRno());
+
+        switch (room.getCid()){
+            case 1:
+                sub.setR_type("普通间");
+                break;
+            case 2:
+                sub.setR_type("舒适间");
+                break;
+            case 3:
+                sub.setR_type("豪华间");
+                break;
+            default:
+                sub.setR_type("单人至尊宇宙豪华总统间");
+                break;
+        }
+
+        return sub;
+    }
+
+    public static Collection<SubdtlTemp> dtl2temp(Collection<Subscriptiondtl> subscriptiondtls){
+        Collection<SubdtlTemp> temps = new ArrayList<>();
+
+        for (Subscriptiondtl subscriptiondtl : subscriptiondtls) {
+            temps.add(getSubDtl(subscriptiondtl));
+        }
+
+        return temps;
     }
 }

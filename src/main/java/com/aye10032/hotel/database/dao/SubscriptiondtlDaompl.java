@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 
 /**
  * @program: hotel
@@ -77,5 +78,17 @@ public class SubscriptiondtlDaompl implements ISubscriptiondtlDao {
         closeAll();
 
         return subscriptiondtl.getId();
+    }
+
+    @Override
+    public Collection<Subscriptiondtl> selectSubscriptiondtlBySid(Integer sid) {
+        Collection<Subscriptiondtl> subscriptiondtls = null;
+        initSession();
+
+        ISubscriptiondtlDao dao = session.getMapper(ISubscriptiondtlDao.class);
+        subscriptiondtls = dao.selectSubscriptiondtlBySid(sid);
+
+        closeAll();
+        return subscriptiondtls;
     }
 }
