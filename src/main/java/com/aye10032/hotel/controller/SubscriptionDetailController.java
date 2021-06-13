@@ -42,7 +42,7 @@ public class SubscriptionDetailController {
 
         Collection<SubdtlTemp> subdtlTemps = Util.dtl2temp(subscriptiondtls);
 
-        model.addAttribute("dtls",subdtlTemps);
+        model.addAttribute("tmps",subdtlTemps);
         return "subscriptionDetail";
     }
 

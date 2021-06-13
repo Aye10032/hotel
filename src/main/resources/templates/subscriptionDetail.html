@@ -102,19 +102,19 @@
                     <th>退房日期</th>
                     <th>操作</th>
                 </tr>
-                <tr th:each="dlt:${dtls}">
-                    <td th:text="${dlt.getR_type()}"></td>
-                    <td th:text="${dlt.getRno()}"></td>
-                    <td th:text="${dlt.getRes_type()}"></td>
-                    <td th:text="${dlt.getPrice()}"></td>
-                    <td th:text="${dlt.getSdate()}"></td>
-                    <td th:text="${dlt.getEdate()}"></td>
+
+                <tr th:each="tmp:${tmps}">
+                    <td th:text="${tmp.getR_type()}"></td>
+                    <td th:text="${tmp.getRno()}"></td>
+                    <td th:text="${tmp.getRes_type()}"></td>
+                    <td th:text="${tmp.getPrice()}"></td>
+                    <td th:text="${tmp.getSdate()}"></td>
+                    <td th:text="${tmp.getEdate()}"></td>
                     <td>
                         <div>
-                            <a th:href="@{/delet_subdtl/{id}(id=${dlt.getId()})}" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>
+                            <a th:href="@{/delet_subdtl/{id}(id=${tmp.getId()})}" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>
                         </div>
                     </td>
-
                 </tr>
                 <!--                    <tr>-->
                 <!--                        <td>-->
