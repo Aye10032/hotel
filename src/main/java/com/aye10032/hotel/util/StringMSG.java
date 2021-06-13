@@ -18,6 +18,9 @@ public class StringMSG {
     public static final Integer DOUBLE_ROOM = 2;
     public static final Integer HUGE_ROOM = 3;
 
+    public static final Integer BED_ONLY = 1;
+    public static final Integer ALL_ROOM = 2;
+
     public static final String ROOM_OPEN = "o";
     public static final String ROOM_CLOSE = "c";
 

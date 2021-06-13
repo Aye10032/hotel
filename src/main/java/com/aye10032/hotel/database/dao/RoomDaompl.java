@@ -115,6 +115,18 @@ public class RoomDaompl implements IRoomDao {
     }
 
     @Override
+    public List<Room> selectRoomByRno(String rno) {
+        List<Room> rooms = null;
+        initSession();
+
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        rooms = dao.selectRoomByRno(rno);
+
+        closeAll();
+        return rooms;
+    }
+
+    @Override
     public Collection<Room> selectChooseRoom(Room room) {
         Collection<Room> rooms = null;
         initSession();

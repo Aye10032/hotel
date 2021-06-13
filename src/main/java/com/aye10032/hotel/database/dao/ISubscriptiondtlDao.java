@@ -1,5 +1,8 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Subscriptiondtl;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -33,5 +36,11 @@ public interface ISubscriptiondtlDao {
             "    price      FLOAT   not null\n" +
             ");")
     void creatSubscriptiondtlTable();
+
+    @Insert("INSERT INTO 'subscriptiondtl' " +
+            "('rid','sid','sdate','edate','residetype','price') VALUES" +
+            "(#{rid},#{sid},#{sdate},#{edate},#{residetype},#{price});")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    Integer InsertSubscriptiondtl(Subscriptiondtl subscriptiondtl);
 
 }

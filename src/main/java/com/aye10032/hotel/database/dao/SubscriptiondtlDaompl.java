@@ -1,5 +1,6 @@
 package com.aye10032.hotel.database.dao;
 
+import com.aye10032.hotel.database.pojo.Subscriptiondtl;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -63,5 +64,18 @@ public class SubscriptiondtlDaompl implements ISubscriptiondtlDao {
 
         session.commit();
         closeAll();
+    }
+
+    @Override
+    public Integer InsertSubscriptiondtl(Subscriptiondtl subscriptiondtl) {
+        initSession();
+
+        ISubscriptiondtlDao dao = session.getMapper(ISubscriptiondtlDao.class);
+        dao.InsertSubscriptiondtl(subscriptiondtl);
+
+        session.commit();
+        closeAll();
+
+        return subscriptiondtl.getId();
     }
 }

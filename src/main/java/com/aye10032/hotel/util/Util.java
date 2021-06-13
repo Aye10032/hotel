@@ -120,4 +120,57 @@ public class Util {
 
         return rooms.iterator();
     }
+
+    public static Integer getResideType(String bookType){
+        if (bookType.equals("1")){
+            return StringMSG.BED_ONLY;
+        }else {
+            return StringMSG.ALL_ROOM;
+        }
+    }
+
+    public static Float getPrice(String bookType, String rootType){
+        Category category;
+
+        int id;
+        switch (rootType) {
+            case "1":
+                id = StringMSG.SINGLE_ROOM;
+                break;
+            case "2":
+                id = StringMSG.DOUBLE_ROOM;
+                break;
+            case "3":
+                id = StringMSG.HUGE_ROOM;
+                break;
+            default:
+                id = 1;
+                break;
+        }
+
+        CategoryDaoImpl dao = new CategoryDaoImpl();
+        category = dao.selectCategoryTable(id).get(0);
+        Float price;
+        switch (bookType){
+            case "1":
+                price = category.getBedprice();
+                break;
+            case "2":
+                price = category.getRoomprice();
+                break;
+            default:
+                price = category.getRoomprice();
+                break;
+        }
+
+        return price;
+    }
+
+    public static Room findRoomByRno(String rno){
+        RoomDaompl roomDaompl = new RoomDaompl();
+
+        List<Room> rooms = roomDaompl.selectRoomByRno(rno);
+
+        return rooms.get(0);
+    }
 }

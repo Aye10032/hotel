@@ -52,6 +52,9 @@ public interface IRoomDao {
     @Select("SELECT * from 'room' WHERE id=#{id}")
     List<Room> selectRoomTable(Integer id);
 
+    @Select("SELECT * from 'room' WHERE rno=#{rno}")
+    List<Room> selectRoomByRno(String rno);
+
     @Select("SELECT * from 'room' WHERE cid=#{cid} AND status=#{status}")
     Collection<Room> selectChooseRoom(Room room);
 }
