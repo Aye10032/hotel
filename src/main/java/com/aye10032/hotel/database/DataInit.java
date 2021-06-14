@@ -2,6 +2,7 @@ package com.aye10032.hotel.database;
 
 import com.aye10032.hotel.database.dao.*;
 import com.aye10032.hotel.database.pojo.Category;
+import com.aye10032.hotel.database.pojo.Manager;
 import com.aye10032.hotel.database.pojo.Room;
 import com.aye10032.hotel.util.StringMSG;
 import com.aye10032.hotel.util.Util;
@@ -18,7 +19,7 @@ import java.io.File;
  */
 public class DataInit {
 
-    public static void init(){
+    public static void init() {
         File file = new File("hotel.db");
         CategoryDaoImpl categoryDao = new CategoryDaoImpl();
         ManagerDaompl managerDaompl = new ManagerDaompl();
@@ -28,7 +29,7 @@ public class DataInit {
         SubscriptionDaompl subscriptionDaompl = new SubscriptionDaompl();
         SubscriptiondtlDaompl subscriptiondtlDaompl = new SubscriptiondtlDaompl();
 
-        if (!file.exists()){
+        if (!file.exists()) {
             managerDaompl.creatManagerTable();
 
             categoryDao.creatCategoryTable();
@@ -42,34 +43,36 @@ public class DataInit {
 
             initCategory();
             initRoom();
-        }else {
-            if (managerDaompl.ManagerTableExist() == 0){
+            initManager();
+        } else {
+            if (managerDaompl.ManagerTableExist() == 0) {
                 managerDaompl.creatManagerTable();
+                initManager();
             }
-            if (categoryDao.CategoryTableExist() == 0){
+            if (categoryDao.CategoryTableExist() == 0) {
                 categoryDao.creatCategoryTable();
                 initCategory();
             }
-            if (memberDao.MemberTableExist() == 0){
+            if (memberDao.MemberTableExist() == 0) {
                 memberDao.CreatMemberTable();
             }
-            if (roomDaompl.RoomTableExist() == 0){
+            if (roomDaompl.RoomTableExist() == 0) {
                 roomDaompl.creatRoomTable();
                 initRoom();
             }
-            if (subscriptionDaompl.SubscriptionTableExist() == 0){
+            if (subscriptionDaompl.SubscriptionTableExist() == 0) {
                 subscriptionDaompl.creatSubscriptionTable();
             }
-            if (subscriptiondtlDaompl.SubscriptiondtlTableExist() == 0){
+            if (subscriptiondtlDaompl.SubscriptiondtlTableExist() == 0) {
                 subscriptiondtlDaompl.creatSubscriptiondtlTable();
             }
-            if (resideDaompl.ResideTableExist() == 0){
+            if (resideDaompl.ResideTableExist() == 0) {
                 resideDaompl.creatResideTable();
             }
         }
     }
 
-    public static void  initCategory(){
+    public static void initCategory() {
         ICategoryDao dao = new CategoryDaoImpl();
         dao.dropCategoryTable();
 
@@ -81,7 +84,7 @@ public class DataInit {
                 "房间面积：40平米。配有单人床两个、市话、长途服务、独立卫生间、淋浴、24小时热水、电视、空调。");
     }
 
-    public static void initRoom(){
+    public static void initRoom() {
         RoomDaompl roomDaompl = new RoomDaompl();
         roomDaompl.dropAllRoomTable();
 
@@ -114,6 +117,12 @@ public class DataInit {
         Util.addRoom(StringMSG.HUGE_ROOM, "307", StringMSG.ROOM_OPEN);
         Util.addRoom(StringMSG.HUGE_ROOM, "308", StringMSG.ROOM_OPEN);
         Util.addRoom(StringMSG.HUGE_ROOM, "309", StringMSG.ROOM_OPEN);
+    }
+
+    public static void initManager() {
+        Manager manager = new Manager();
+        manager.setPwd("12345");
+        manager.setUsername("admin");
     }
 
 }
