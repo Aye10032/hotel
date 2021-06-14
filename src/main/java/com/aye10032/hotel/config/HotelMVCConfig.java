@@ -49,6 +49,6 @@ public class HotelMVCConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/", "/index.html", "/register-1.html", "/register", "/register-2.html",
                         "/login.html", "/user_login", "/roomPrice.html",
-                        "/images/*", "/js/*", "/style/*", "/manager/", "/manager/login.html");
+                        "/images/*", "/js/*", "/style/*", "/manager/*");
     }
 }
