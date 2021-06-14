@@ -91,4 +91,15 @@ public class SubscriptiondtlDaompl implements ISubscriptiondtlDao {
         closeAll();
         return subscriptiondtls;
     }
+
+    @Override
+    public void deleteSubscriptiondtl(Integer id) {
+        initSession();
+
+        ISubscriptiondtlDao dao = session.getMapper(ISubscriptiondtlDao.class);
+        dao.deleteSubscriptiondtl(id);
+
+        session.commit();
+        closeAll();
+    }
 }

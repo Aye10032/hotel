@@ -1,10 +1,7 @@
 package com.aye10032.hotel.database.dao;
 
 import com.aye10032.hotel.database.pojo.Subscriptiondtl;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.Collection;
 
@@ -47,4 +44,8 @@ public interface ISubscriptiondtlDao {
 
     @Select("SELECT * FROM 'subscriptiondtl' WHERE sid=#{sid}")
     Collection<Subscriptiondtl> selectSubscriptiondtlBySid(Integer sid);
+
+    @Delete("DELETE FROM 'subscriptiondtl' " +
+            "WHERE id=#{id}")
+    void deleteSubscriptiondtl(Integer id);
 }

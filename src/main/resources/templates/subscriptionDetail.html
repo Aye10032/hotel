@@ -108,35 +108,14 @@
                     <td th:text="${tmp.getRno()}"></td>
                     <td th:text="${tmp.getRes_type()}"></td>
                     <td th:text="${tmp.getPrice()}"></td>
-                    <td th:text="${tmp.getSdate()}"></td>
-                    <td th:text="${tmp.getEdate()}"></td>
+                    <td th:text="${#dates.format(tmp.getSdate(), 'yyyy-MM-dd')}"></td>
+                    <td th:text="${#dates.format(tmp.getEdate(), 'yyyy-MM-dd')}"></td>
                     <td>
                         <div>
                             <a th:href="@{/delet_subdtl/{id}(id=${tmp.getId()})}" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>
                         </div>
                     </td>
                 </tr>
-                <!--                    <tr>-->
-                <!--                        <td>-->
-                <!--                            <div>标准间</div>-->
-                <!--                        </td>-->
-                <!--                        <td>-->
-                <!--                            <div>818</div>-->
-                <!--                        </td>-->
-                <!--                        <td>-->
-                <!--                            <div>整个房间</div>-->
-                <!--                        </td>-->
-                <!--                        <td>-->
-                <!--                            <div>300</div>-->
-                <!--                        </td>-->
-                <!--                        <td>2009-10-09</td>-->
-                <!--                        <td>2009-10-15</td>-->
-                <!--                        <td>-->
-                <!--                            <div>-->
-                <!--                                <a href="#" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>-->
-                <!--                            </div>-->
-                <!--                        </td>-->
-                <!--                    </tr>-->
             </table>
             <div class="submit">
                 <input type="button" value="返回" th:onclick="location='/memberCenter'"/>

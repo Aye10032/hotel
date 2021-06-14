@@ -46,4 +46,12 @@ public class SubscriptionDetailController {
         return "subscriptionDetail";
     }
 
+    @RequestMapping("/delet_subdtl/{id}")
+    public String deleteSubscriptionDetail(@PathVariable("id")Integer id){
+        SubscriptiondtlDaompl dao = new SubscriptiondtlDaompl();
+        dao.deleteSubscriptiondtl(id);
+
+        return "redirect:/subscriptionDetail";
+    }
+
 }
