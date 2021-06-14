@@ -42,10 +42,10 @@ public interface IManagerDao {
     void dropManagerTable(Integer id);
 
     @Update("UPDATE 'manager' SET " +
-            "name=#{name},pwd=#{pwd} " +
+            "username=#{username},pwd=#{pwd} " +
             "where id=#{id};")
     void updateManagerTable(Manager manager);
 
-    @Select("SELECT * FROM 'manager' WHERE id=#{id}")
-    List<Manager> selectManagerTable(Integer id);
+    @Select("SELECT * FROM 'manager' WHERE username=#{username}")
+    List<Manager> selectManagerTable(String name);
 }

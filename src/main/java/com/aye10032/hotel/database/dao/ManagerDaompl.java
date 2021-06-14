@@ -102,12 +102,12 @@ public class ManagerDaompl implements IManagerDao {
     }
 
     @Override
-    public List<Manager> selectManagerTable(Integer id) {
+        public List<Manager> selectManagerTable(String name) {
         List<Manager> managers = null;
         initSession();
 
         IManagerDao dao = session.getMapper(IManagerDao.class);
-        managers = dao.selectManagerTable(id);
+        managers = dao.selectManagerTable(name);
 
         closeAll();
         return managers;

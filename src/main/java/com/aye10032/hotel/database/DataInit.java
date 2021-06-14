@@ -123,6 +123,9 @@ public class DataInit {
         Manager manager = new Manager();
         manager.setPwd("12345");
         manager.setUsername("admin");
+
+        ManagerDaompl dao = new ManagerDaompl();
+        dao.insertManagerTable(manager);
     }
 
 }
