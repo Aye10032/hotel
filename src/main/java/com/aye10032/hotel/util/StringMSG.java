@@ -10,9 +10,9 @@ package com.aye10032.hotel.util;
  */
 public class StringMSG {
 
-    public static final String STATUS_YES = "0";
-    public static final String STATUS_CANCEL = "1";
-    public static final String STATUS_WAIT = "2";
+    public static final String STATUS_YES = "已确定";
+    public static final String STATUS_CANCEL = "已取消";
+    public static final String STATUS_WAIT = "未生效";
 
     public static final Integer SINGLE_ROOM = 1;
     public static final Integer DOUBLE_ROOM = 2;
