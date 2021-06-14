@@ -57,4 +57,9 @@ public interface IRoomDao {
 
     @Select("SELECT * from 'room' WHERE cid=#{cid} AND status=#{status}")
     Collection<Room> selectChooseRoom(Room room);
+
+    @Update("UPDATE 'room' SET " +
+            "status=#{status}" +
+            "WHERE id=#{id};")
+    void updateRoomStatus(Room room);
 }

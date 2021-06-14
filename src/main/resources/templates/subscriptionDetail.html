@@ -112,7 +112,7 @@
                     <td th:text="${#dates.format(tmp.getEdate(), 'yyyy-MM-dd')}"></td>
                     <td>
                         <div>
-                            <a th:href="@{/delet_subdtl/{id}(id=${tmp.getId()})}" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>
+                            <a th:href="@{/delet_subdtl(id=${tmp.getId()},rno=${tmp.getRno()})}" onclick="return confirm('真的要删除该预定细信息吗？')">删除</a>
                         </div>
                     </td>
                 </tr>

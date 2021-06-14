@@ -137,4 +137,15 @@ public class RoomDaompl implements IRoomDao {
         closeAll();
         return rooms;
     }
+
+    @Override
+    public void updateRoomStatus(Room room) {
+        initSession();
+
+        IRoomDao dao = session.getMapper(IRoomDao.class);
+        dao.updateRoomStatus(room);
+
+        session.commit();
+        closeAll();
+    }
 }

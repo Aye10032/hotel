@@ -5,6 +5,7 @@ import com.aye10032.hotel.database.pojo.Room;
 import com.aye10032.hotel.database.pojo.Subscription;
 import com.aye10032.hotel.database.pojo.Subscriptiondtl;
 import com.aye10032.hotel.util.DateUtil;
+import com.aye10032.hotel.util.StringMSG;
 import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,8 +74,10 @@ public class CreateSubscriptionDtlController {
 
         SubscriptiondtlDaompl dao = new SubscriptiondtlDaompl();
         for (String room:rooms){
-            subscription.setRid(Util.findRoomByRno(room).getId());
+            Integer rid = Util.findRoomByRno(room).getId();
+            subscription.setRid(rid);
             dao.InsertSubscriptiondtl(subscription);
+            Util.changeRoomStatus(rid, StringMSG.ROOM_CLOSE);
         }
         return "createSubscriptionDtl-3";
     }

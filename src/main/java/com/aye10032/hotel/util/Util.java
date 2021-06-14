@@ -105,28 +105,28 @@ public class Util {
             Room r = all_room.next();
             rooms_.add(r);
             flag++;
-            if (flag == 6){
+            if (flag == 6) {
                 flag = 0;
                 rooms.add(rooms_);
                 rooms_ = new ArrayList<>();
             }
         }
-        if (flag!=0){
+        if (flag != 0) {
             rooms.add(rooms_);
         }
 
         return rooms.iterator();
     }
 
-    public static Integer getResideType(String bookType){
-        if (bookType.equals("1")){
+    public static Integer getResideType(String bookType) {
+        if (bookType.equals("1")) {
             return StringMSG.BED_ONLY;
-        }else {
+        } else {
             return StringMSG.ALL_ROOM;
         }
     }
 
-    public static Float getPrice(String bookType, String rootType){
+    public static Float getPrice(String bookType, String rootType) {
         Category category;
 
         int id;
@@ -148,7 +148,7 @@ public class Util {
         CategoryDaoImpl dao = new CategoryDaoImpl();
         category = dao.selectCategoryTable(id).get(0);
         Float price;
-        switch (bookType){
+        switch (bookType) {
             case "1":
                 price = category.getBedprice();
                 break;
@@ -163,7 +163,7 @@ public class Util {
         return price;
     }
 
-    public static Room findRoomByRno(String rno){
+    public static Room findRoomByRno(String rno) {
         RoomDaompl roomDaompl = new RoomDaompl();
 
         List<Room> rooms = roomDaompl.selectRoomByRno(rno);
@@ -171,7 +171,7 @@ public class Util {
         return rooms.get(0);
     }
 
-    public static SubdtlTemp getSubDtl(Subscriptiondtl subscriptiondtl){
+    public static SubdtlTemp getSubDtl(Subscriptiondtl subscriptiondtl) {
         SubdtlTemp sub = new SubdtlTemp();
 
         Room room = new RoomDaompl().selectRoomTable(subscriptiondtl.getRid()).get(0);
@@ -183,7 +183,7 @@ public class Util {
         sub.setRes_type(subscriptiondtl.getResidetype());
         sub.setRno(room.getRno());
 
-        switch (room.getCid()){
+        switch (room.getCid()) {
             case 1:
                 sub.setR_type("普通间");
                 break;
@@ -201,7 +201,7 @@ public class Util {
         return sub;
     }
 
-    public static Collection<SubdtlTemp> dtl2temp(Collection<Subscriptiondtl> subscriptiondtls){
+    public static Collection<SubdtlTemp> dtl2temp(Collection<Subscriptiondtl> subscriptiondtls) {
         Collection<SubdtlTemp> temps = new ArrayList<>();
 
         for (Subscriptiondtl subscriptiondtl : subscriptiondtls) {
@@ -209,5 +209,15 @@ public class Util {
         }
 
         return temps;
+    }
+
+    public static void changeRoomStatus(Integer rid, String flag) {
+        RoomDaompl dao = new RoomDaompl();
+
+        Room room = new Room();
+        room.setId(rid);
+        room.setStatus(flag);
+
+        dao.updateRoomStatus(room);
     }
 }

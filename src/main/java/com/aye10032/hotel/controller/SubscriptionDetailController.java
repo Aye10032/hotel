@@ -4,11 +4,13 @@ import com.aye10032.hotel.database.dao.SubscriptionDaompl;
 import com.aye10032.hotel.database.dao.SubscriptiondtlDaompl;
 import com.aye10032.hotel.database.pojo.SubdtlTemp;
 import com.aye10032.hotel.database.pojo.Subscriptiondtl;
+import com.aye10032.hotel.util.StringMSG;
 import com.aye10032.hotel.util.Util;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collection;
@@ -26,15 +28,15 @@ public class SubscriptionDetailController {
 
     @RequestMapping("/subscriptionDetail/{sno}")
     public String subscriptionDetail(
-            @PathVariable("sno")Integer id
-            , Model model, HttpSession session){
-        session.setAttribute("subID",id);
+            @PathVariable("sno") Integer id
+            , Model model, HttpSession session) {
+        session.setAttribute("subID", id);
 
         return "redirect:/subscriptionDetail";
     }
 
     @RequestMapping("/subscriptionDetail")
-    public String subscriptionDetail(Model model, HttpSession session){
+    public String subscriptionDetail(Model model, HttpSession session) {
         SubscriptiondtlDaompl dao = new SubscriptiondtlDaompl();
         Collection<Subscriptiondtl> subscriptiondtls =
                 dao.selectSubscriptiondtlBySid(
@@ -42,14 +44,17 @@ public class SubscriptionDetailController {
 
         Collection<SubdtlTemp> subdtlTemps = Util.dtl2temp(subscriptiondtls);
 
-        model.addAttribute("tmps",subdtlTemps);
+        model.addAttribute("tmps", subdtlTemps);
         return "subscriptionDetail";
     }
 
-    @RequestMapping("/delet_subdtl/{id}")
-    public String deleteSubscriptionDetail(@PathVariable("id")Integer id){
+    @RequestMapping("/delet_subdtl")
+    public String deleteSubscriptionDetail(
+            @RequestParam("id") Integer id,
+            @RequestParam("rno") String rno) {
         SubscriptiondtlDaompl dao = new SubscriptiondtlDaompl();
         dao.deleteSubscriptiondtl(id);
+        Util.changeRoomStatus(Util.findRoomByRno(rno).getId(), StringMSG.ROOM_OPEN);
 
         return "redirect:/subscriptionDetail";
     }
