@@ -60,18 +60,18 @@
 <div id="container">
   <div id="header">
     <ul>
-      <li><a href="login.html">退出</a></li>
+      <li><a th:href="@{/exit_page}">退出</a></li>
     </ul>
   </div>
   <div id="menu">
     <ul>
-      <li><a href="#">客房管理</a></li>
-      <li><a href="#">会员管理</a></li>
-      <li><a href="subscriptionQuery.html">订单管理</a></li>
+      <li><a th:href="@{#}">客房管理</a></li>
+      <li><a th:href="@{#}">会员管理</a></li>
+      <li><a th:href="@{/manager/subscriptionQuery}">订单管理</a></li>
     </ul>
   </div>
   <div id="content">
-    <form action="subscriptionList.html">
+    <form th:action="@{/manager/subscriptionList}">
       <fieldset>
         <legend>查询条件</legend>
         <div class="row">

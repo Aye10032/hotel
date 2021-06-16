@@ -129,18 +129,18 @@
 <div id="container">
   <div id="header">
     <ul>
-      <li><a href="login.html">退出</a></li>
+      <li><a th:href="@{/exit_page}">退出</a></li>
     </ul>
   </div>
   <div id="menu">
     <ul>
-      <li><a href="#">客房管理</a></li>
-      <li><a href="#">会员管理</a></li>
-      <li><a href="subscriptionQuery.html">订单管理</a></li>
+      <li><a th:href="@{#}">客房管理</a></li>
+      <li><a th:href="@{#}">会员管理</a></li>
+      <li><a th:href="@{/manager/subscriptionQuery}">订单管理</a></li>
     </ul>
   </div>
   <div id="content" style="border:solid 1px #ffffff;width:90%;margin:auto;padding-top:10px">
-    <form action="subscriptionDetail.html">
+    <form th:action="@{/manager/subscriptionDetail}">
         <div class="heading">
           <p>订单基本信息</p>
         </div>      
@@ -259,7 +259,7 @@
       </tr>
     </table>
     <div class="submit">
-      <input type="button" value="返回" onclick="location='subscriptionList.html'"/>
+      <input type="button" value="返回" th:onclick="location='/manager/subscriptionList'"/>
     </div>
   </div>
   <hr />

@@ -68,14 +68,14 @@
 <div id="container">
   <div id="header">
     <ul>
-      <li><a href="login.html">退出</a></li>
+      <li><a th:href="@{/exit_page}">退出</a></li>
     </ul>
   </div>
   <div id="menu">
     <ul>
-      <li><a href="#">客房管理</a></li>
-      <li><a href="#">会员管理</a></li>
-      <li><a href="subscriptionQuery.html">订单管理</a></li>
+      <li><a th:href="@{#}">客房管理</a></li>
+      <li><a th:href="@{#}">会员管理</a></li>
+      <li><a th:href="@{/manager/subscriptionQuery}">订单管理</a></li>
     </ul>
   </div>
   <div id="content">
@@ -100,7 +100,7 @@
       </tr>
       <tr>
         <td><div>1</div></td>
-        <td><div><a href="subscriptionDetail.html">2009100512</a></div></td>
+        <td><div><a th:href="@{/manager/subscriptionDetail}">2009100512</a></div></td>
         <td><div>刘新福</div></td>
         <td>13426330776</td>
         <td>javamedia@live.cn</td>
@@ -139,7 +139,7 @@
       </tr>
     </table>
     <div class="button">
-      <input type="button" value="重新查询" onclick="location='subscriptionQuery.html'"/>
+      <input type="button" value="重新查询" th:onclick="location='/manager/subscriptionQuery'"/>
     </div>
   </div>
   <hr />
