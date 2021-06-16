@@ -60,8 +60,6 @@ public class EditSubscriptionController {
             subscription.setPhone(phone);
             subscription.setEmail(email);
 
-            System.out.println(subscription);
-
             SubscriptionDaompl dao = new SubscriptionDaompl();
             dao.updateSubscriptionTable(subscription);
         }

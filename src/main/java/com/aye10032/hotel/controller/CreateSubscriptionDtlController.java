@@ -42,8 +42,10 @@ public class CreateSubscriptionDtlController {
             Model model, HttpSession session) {
 
         Iterator<Collection<Room>> rooms = Util.selectRoom(rootType);
-        model.addAttribute("rooms1", rooms.next());
-        model.addAttribute("rooms2", rooms.next());
+        if (rooms.hasNext())
+            model.addAttribute("rooms1", rooms.next());
+        if (rooms.hasNext())
+            model.addAttribute("rooms2", rooms.next());
 
         session.setAttribute("rootType", rootType);
         session.setAttribute("bookType", bookType);
