@@ -74,6 +74,7 @@
           <label for="repassword">重复密码</label>
           <input type="password" name="repassword" id="repassword" />
         </div>
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
       </fieldset>
       <fieldset>
         <legend>联系信息[可选]</legend>
